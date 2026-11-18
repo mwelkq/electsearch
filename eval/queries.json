@@ -640,5 +640,353 @@
   "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
   "reviewed": false,
   "set": "heldout"
+ },
+ {
+  "id": "u001",
+  "set": "user",
+  "category": "nav_direct",
+  "query": "деканат",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/administration/",
+   "https://electronics.lnu.edu.ua/about/staff/"
+  ],
+  "note": "запит Марти | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u002",
+  "set": "user",
+  "category": "wayfinding",
+  "query": "вхід в деканат",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/",
+   "https://electronics.lnu.edu.ua/about/administration/"
+  ],
+  "note": "запит Марти; точного місця входу/кімнати на сайті немає — зараховуємо адресу (Контакти) або склад деканату | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u003",
+  "set": "user",
+  "category": "wayfinding",
+  "query": "де знаходиться деканат",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/",
+   "https://electronics.lnu.edu.ua/about/administration/"
+  ],
+  "note": "як вище | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u004",
+  "set": "user",
+  "category": "trap",
+  "query": "години роботи деканату",
+  "relevant": [],
+  "note": "на сайті немає графіка роботи | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u005",
+  "set": "user",
+  "category": "person",
+  "query": "хто декан факультету електроніки",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/administration/",
+   "https://electronics.lnu.edu.ua/about/staff/",
+   "https://electronics.lnu.edu.ua/employee/furhala-yurij-myhajlovych/",
+   "https://electronics.lnu.edu.ua/about/vitalne-slovo/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u006",
+  "set": "user",
+  "category": "trap",
+  "query": "телефон приймальної комісії",
+  "relevant": [],
+  "note": "на сайті факультету немає (лише в біографії викладача) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u007",
+  "set": "user",
+  "category": "admission",
+  "query": "як вступити на бакалаврат",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/admission/",
+   "https://electronics.lnu.edu.ua/admission/vstupna-kampaniia-2021-2022-navchal-noho-roku/",
+   "https://electronics.lnu.edu.ua/admission/your-prospects/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u008",
+  "set": "user",
+  "category": "money",
+  "query": "скільки коштує навчання",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/",
+   "https://electronics.lnu.edu.ua/academics/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u009",
+  "set": "user",
+  "category": "money",
+  "query": "як оплатити контракт",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u010",
+  "set": "user",
+  "category": "trap",
+  "query": "стипендія",
+  "relevant": [],
+  "note": "окремої сторінки про стипендії немає, лише згадки | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u011",
+  "set": "user",
+  "category": "housing",
+  "query": "поселення в гуртожиток",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-fakultetu-elektroniky-ta-komp-iuternykh-tekhnolohiy-rekomendovanykh-na-poselennia-v-hurtozhytok-tretia-khvylia-2/",
+   "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-rekomendovanykh-na-poselennia-v-hurtozhytok-2-y-etap-poselennia/",
+   "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-rekomendovanykh-na-poselennia-v-hurtozhytok-5-lvivskoho-natsionalnoho-universytetu-imeni-ivana-franka-vul-pasichna-62b-1-y-etap-poselennia-2/"
+  ],
+  "note": "лише новини зі списками на поселення | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u012",
+  "set": "user",
+  "category": "trap",
+  "query": "як взяти академвідпустку",
+  "relevant": [],
+  "note": "на сайті немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u013",
+  "set": "user",
+  "category": "exams",
+  "query": "коли перездача",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/hrafik-perezdach-zalikiv-ta-ispytiv/",
+   "https://electronics.lnu.edu.ua/students/rozklad-format-pdf/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u014",
+  "set": "user",
+  "category": "trap",
+  "query": "перевестись на індивідуальний графік навчання",
+  "relevant": [],
+  "note": "на сайті факультету немає (є лише на lnu.edu.ua) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u015",
+  "set": "user",
+  "category": "documents",
+  "query": "довідка з місця навчання",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/korysna-informatsiya/"
+  ],
+  "note": "«Довідка про здобувача освіти» | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u016",
+  "set": "user",
+  "category": "trap",
+  "query": "як отримати корпоративну пошту студенту",
+  "relevant": [],
+  "note": "на сайті немає інструкції | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u017",
+  "set": "user",
+  "category": "mobility",
+  "query": "програма Erasmus для студентів",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/akademichna-mobilnist/",
+   "https://electronics.lnu.edu.ua/about/international-cooperation/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u018",
+  "set": "user",
+  "category": "trap",
+  "query": "як записатись на вибіркові дисципліни",
+  "relevant": [],
+  "note": "процедури вибору на сайті немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u019",
+  "set": "user",
+  "category": "trap",
+  "query": "чи є військова кафедра",
+  "relevant": [],
+  "note": "на сайті немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u020",
+  "set": "user",
+  "category": "trap",
+  "query": "курси англійської мови",
+  "relevant": [],
+  "note": "на сайті немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u021",
+  "set": "user",
+  "category": "wayfinding",
+  "query": "де аудиторія 128",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/career/"
+  ],
+  "note": "список аудиторій за корпусами на сторінці розкладу | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u022",
+  "set": "user",
+  "category": "exams",
+  "query": "коли зимова сесія",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/rozklad-format-pdf/",
+   "https://electronics.lnu.edu.ua/students/zaochne-navchannia/",
+   "https://electronics.lnu.edu.ua/academics/zaochna-forma/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u023",
+  "set": "user",
+  "category": "schedule",
+  "query": "розклад викладача",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/schedule-of-lecturers/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u024",
+  "set": "user",
+  "category": "schedule",
+  "query": "розклад на завтра",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/career/"
+  ],
+  "note": "розмовне | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u025",
+  "set": "user",
+  "category": "documents",
+  "query": "теми магістерських робіт",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/master/curriculum-computer-technologies-2017/",
+   "https://electronics.lnu.edu.ua/academics/master/curriculum-micro-and-nanotechnics/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u026",
+  "set": "user",
+  "category": "support",
+  "query": "психологічна допомога студентам",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/startup-jam/"
+  ],
+  "note": "єдина згадка на сайті — на сторінці Startup Jam (посилання Psychohelp) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u027",
+  "set": "user",
+  "category": "nav_colloquial",
+  "query": "хто наш куратор групи",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/"
+  ],
+  "note": "на сайті — «порадник» | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u028",
+  "set": "user",
+  "category": "info",
+  "query": "контакти кафедри оптоелектроніки",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/department/optoelectronics-2/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u029",
+  "set": "user",
+  "category": "trap",
+  "query": "як поновитися на навчання",
+  "relevant": [],
+  "note": "на сайті факультету немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u030",
+  "set": "user",
+  "category": "trap",
+  "query": "як перевестися на іншу спеціальність",
+  "relevant": [],
+  "note": "на сайті немає | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u031",
+  "set": "user",
+  "category": "admission",
+  "query": "документи для вступу в магістратуру",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/admission/",
+   "https://electronics.lnu.edu.ua/admission/your-prospects/",
+   "https://electronics.lnu.edu.ua/academics/master/"
+  ],
+  "note": "тема з типових FAQ студентів (пошук в інтернеті 19.11.2026) | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
+ },
+ {
+  "id": "u032",
+  "set": "user",
+  "category": "money",
+  "query": "де взяти реквізити для оплати гуртожитку",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/"
+  ],
+  "note": "реквізити «Оплата за гуртожиток…» на сторінці оплати | еталон розмічено пошуком по тексту сторінок ДО прогону системи; потрібна перевірка Марти",
+  "reviewed": false
  }
 ]

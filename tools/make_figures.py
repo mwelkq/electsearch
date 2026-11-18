@@ -174,6 +174,31 @@ def fig_h4():
     save(fig, "fig5_h4_lemma.png")
 
 
+# 6. Робочий набір проти нових (незалежних) запитів
+def fig_generalization():
+    main = load("results_v3_e5small256_exp")["summary"]["hybrid"]["all"]
+    user = load("results_user_final")["summary"]["hybrid"]["all"]
+    rag_main = load("rag_rag_v4_gemini-3.1-flash-lite_summary")["summary"]["accuracy"]
+    rag_user = load("rag_rag_user_final_summary")["summary"]["accuracy"]
+    labels = ["Пошук: Hit@1", "Пошук: Hit@5", "Пошук: MRR", "RAG: точність"]
+    series = [(f"Робочий набір (n={main['n']}), на ньому налаштовували", "#2a78d6",
+               [main["Hit@1"], main["Hit@5"], main["MRR"], rag_main]),
+              (f"Нові запити (n={user['n']}), система їх не бачила", "#eb6834",
+               [user["Hit@1"], user["Hit@5"], user["MRR"], rag_user])]
+    fig, ax = plt.subplots(figsize=(7.2, 3.8))
+    w = 0.36
+    for j, (lab, col, vals) in enumerate(series):
+        xs = [i + (j - 0.5) * w for i in range(len(labels))]
+        bars_with_gap(ax, xs, vals, w, col, lab)
+        for x, v in zip(xs, vals):
+            ax.text(x, v + 0.012, f"{v:.2f}", ha="center", va="bottom", fontsize=9, color=INK2)
+    ax.set_xticks(range(len(labels)), labels)
+    style_y(ax, 1.1, "Частка запитів / MRR")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=1)
+    ax.set_title("Гібридний пошук і RAG: робочий набір проти нових запитів", loc="left", fontsize=11.5)
+    save(fig, "fig6_generalization.png")
+
+
 # Таблиця прикладів: де виграє кожен метод
 def examples():
     rows = load("results_e5small256_exp")["rows"]
@@ -225,4 +250,5 @@ if __name__ == "__main__":
     fig_categories("results_v3_e5small256_exp", "fig4b_categories_final.png",
                    "Hit@3 за категоріями запитів: фінальна конфігурація")
     fig_h4()
+    fig_generalization()
     examples()

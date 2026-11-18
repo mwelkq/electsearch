@@ -1,0 +1,1418 @@
+{
+ "config": {
+  "model": "intfloat/multilingual-e5-small",
+  "max_len": 256,
+  "chunks": "C:\\Users\\1\\Desktop\\унік\\курсова робота\\data\\chunks_v2.jsonl",
+  "title_weight": 1.0,
+  "expand": true,
+  "lemma": true
+ },
+ "summary": {
+  "bm25": {
+   "all": {
+    "n": 21,
+    "Hit@1": 0.38095238095238093,
+    "Hit@3": 0.7619047619047619,
+    "Hit@5": 0.8571428571428571,
+    "MRR": 0.5587301587301587,
+    "Recall@5": 0.7023809523809523
+   },
+   "nav_direct": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.5,
+    "Recall@5": 1.0
+   },
+   "wayfinding": {
+    "n": 3,
+    "Hit@1": 0.3333333333333333,
+    "Hit@3": 0.6666666666666666,
+    "Hit@5": 1.0,
+    "MRR": 0.5111111111111111,
+    "Recall@5": 0.6666666666666666
+   },
+   "person": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.5,
+    "Recall@5": 0.75
+   },
+   "admission": {
+    "n": 2,
+    "Hit@1": 0.0,
+    "Hit@3": 0.5,
+    "Hit@5": 0.5,
+    "MRR": 0.16666666666666666,
+    "Recall@5": 0.16666666666666666
+   },
+   "money": {
+    "n": 3,
+    "Hit@1": 0.6666666666666666,
+    "Hit@3": 0.6666666666666666,
+    "Hit@5": 0.6666666666666666,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.6666666666666666
+   },
+   "housing": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "exams": {
+    "n": 2,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 0.5833333333333333
+   },
+   "documents": {
+    "n": 2,
+    "Hit@1": 0.0,
+    "Hit@3": 0.5,
+    "Hit@5": 0.5,
+    "MRR": 0.25,
+    "Recall@5": 0.5
+   },
+   "mobility": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.3333333333333333,
+    "Recall@5": 0.5
+   },
+   "schedule": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 1.0
+   },
+   "support": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 0.0,
+    "Hit@5": 1.0,
+    "MRR": 0.2,
+    "Recall@5": 1.0
+   },
+   "nav_colloquial": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "info": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.5,
+    "Recall@5": 1.0
+   }
+  },
+  "embed": {
+   "all": {
+    "n": 21,
+    "Hit@1": 0.47619047619047616,
+    "Hit@3": 0.6190476190476191,
+    "Hit@5": 0.6666666666666666,
+    "MRR": 0.5636810279667422,
+    "Recall@5": 0.4801587301587302
+   },
+   "nav_direct": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 0.5
+   },
+   "wayfinding": {
+    "n": 3,
+    "Hit@1": 0.3333333333333333,
+    "Hit@3": 0.3333333333333333,
+    "Hit@5": 0.3333333333333333,
+    "MRR": 0.3703703703703704,
+    "Recall@5": 0.16666666666666666
+   },
+   "person": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.3333333333333333,
+    "Recall@5": 0.25
+   },
+   "admission": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 0.5,
+    "Hit@5": 0.5,
+    "MRR": 0.5833333333333334,
+    "Recall@5": 0.3333333333333333
+   },
+   "money": {
+    "n": 3,
+    "Hit@1": 0.3333333333333333,
+    "Hit@3": 0.6666666666666666,
+    "Hit@5": 0.6666666666666666,
+    "MRR": 0.5,
+    "Recall@5": 0.6666666666666666
+   },
+   "housing": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "exams": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.5833333333333333
+   },
+   "documents": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 0.5,
+    "Hit@5": 1.0,
+    "MRR": 0.625,
+    "Recall@5": 0.75
+   },
+   "mobility": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 0.5
+   },
+   "schedule": {
+    "n": 2,
+    "Hit@1": 0.0,
+    "Hit@3": 0.0,
+    "Hit@5": 0.0,
+    "MRR": 0.07142857142857142,
+    "Recall@5": 0.0
+   },
+   "support": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 0.0,
+    "Hit@5": 0.0,
+    "MRR": 0.0,
+    "Recall@5": 0.0
+   },
+   "nav_colloquial": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "info": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   }
+  },
+  "hybrid": {
+   "all": {
+    "n": 21,
+    "Hit@1": 0.5238095238095238,
+    "Hit@3": 0.9047619047619048,
+    "Hit@5": 0.9047619047619048,
+    "MRR": 0.6964285714285714,
+    "Recall@5": 0.6825396825396826
+   },
+   "nav_direct": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "wayfinding": {
+    "n": 3,
+    "Hit@1": 0.3333333333333333,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.6666666666666666
+   },
+   "person": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.5,
+    "Recall@5": 0.5
+   },
+   "admission": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.3333333333333333
+   },
+   "money": {
+    "n": 3,
+    "Hit@1": 0.6666666666666666,
+    "Hit@3": 0.6666666666666666,
+    "Hit@5": 0.6666666666666666,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.6666666666666666
+   },
+   "housing": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "exams": {
+    "n": 2,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 0.5833333333333333
+   },
+   "documents": {
+    "n": 2,
+    "Hit@1": 0.5,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.6666666666666666,
+    "Recall@5": 0.75
+   },
+   "mobility": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.5,
+    "Recall@5": 0.5
+   },
+   "schedule": {
+    "n": 2,
+    "Hit@1": 0.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.41666666666666663,
+    "Recall@5": 1.0
+   },
+   "support": {
+    "n": 1,
+    "Hit@1": 0.0,
+    "Hit@3": 0.0,
+    "Hit@5": 0.0,
+    "MRR": 0.125,
+    "Recall@5": 0.0
+   },
+   "nav_colloquial": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   },
+   "info": {
+    "n": 1,
+    "Hit@1": 1.0,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 1.0,
+    "Recall@5": 1.0
+   }
+  }
+ },
+ "bootstrap": {
+  "ci": {
+   "bm25|Hit@1": [
+    0.38095238095238093,
+    0.19047619047619047,
+    0.6190476190476191
+   ],
+   "embed|Hit@1": [
+    0.47619047619047616,
+    0.2857142857142857,
+    0.7142857142857143
+   ],
+   "hybrid|Hit@1": [
+    0.5238095238095238,
+    0.3333333333333333,
+    0.7142857142857143
+   ],
+   "bm25|Hit@3": [
+    0.7619047619047619,
+    0.5714285714285714,
+    0.9523809523809523
+   ],
+   "embed|Hit@3": [
+    0.6190476190476191,
+    0.42857142857142855,
+    0.8095238095238095
+   ],
+   "hybrid|Hit@3": [
+    0.9047619047619048,
+    0.7619047619047619,
+    1.0
+   ],
+   "bm25|MRR": [
+    0.5587301587301587,
+    0.4031746031746032,
+    0.7222222222222222
+   ],
+   "embed|MRR": [
+    0.5636810279667422,
+    0.37736205593348454,
+    0.7475718065003776
+   ],
+   "hybrid|MRR": [
+    0.6964285714285714,
+    0.5476190476190477,
+    0.8392857142857143
+   ]
+  },
+  "diff": {
+   "embed - bm25|Hit@1": [
+    0.09523809523809523,
+    -0.19047619047619047,
+    0.38095238095238093
+   ],
+   "hybrid - bm25|Hit@1": [
+    0.14285714285714285,
+    -0.047619047619047616,
+    0.3333333333333333
+   ],
+   "hybrid - embed|Hit@1": [
+    0.047619047619047616,
+    -0.19047619047619047,
+    0.2857142857142857
+   ],
+   "embed - bm25|Hit@3": [
+    -0.14285714285714285,
+    -0.38095238095238093,
+    0.09523809523809523
+   ],
+   "hybrid - bm25|Hit@3": [
+    0.14285714285714285,
+    0.0,
+    0.2857142857142857
+   ],
+   "hybrid - embed|Hit@3": [
+    0.2857142857142857,
+    0.09523809523809523,
+    0.47619047619047616
+   ],
+   "embed - bm25|MRR": [
+    0.00495086923658352,
+    -0.22131519274376416,
+    0.2311413454270597
+   ],
+   "hybrid - bm25|MRR": [
+    0.13769841269841274,
+    0.02460317460317461,
+    0.2523809523809524
+   ],
+   "hybrid - embed|MRR": [
+    0.13274754346182918,
+    -0.04365079365079364,
+    0.31000094482237334
+   ]
+  }
+ },
+ "rows": {
+  "bm25": [
+   {
+    "id": "u001",
+    "category": "nav_direct",
+    "query": "деканат",
+    "n_rel": 2,
+    "first_rank": 2,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 11.413121842175315
+   },
+   {
+    "id": "u002",
+    "category": "wayfinding",
+    "query": "вхід в деканат",
+    "n_rel": 2,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 11.413121842175315
+   },
+   {
+    "id": "u003",
+    "category": "wayfinding",
+    "query": "де знаходиться деканат",
+    "n_rel": 2,
+    "first_rank": 5,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 11.413121842175315
+   },
+   {
+    "id": "u004",
+    "category": "trap",
+    "query": "години роботи деканату",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 11.413121842175315
+   },
+   {
+    "id": "u005",
+    "category": "person",
+    "query": "хто декан факультету електроніки",
+    "n_rel": 4,
+    "first_rank": 2,
+    "found_in_top5": 3,
+    "top1": "https://electronics.lnu.edu.ua/about/history-of-faculty/",
+    "top1_score": 17.04605741578862
+   },
+   {
+    "id": "u006",
+    "category": "trap",
+    "query": "телефон приймальної комісії",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/employee/olenych-i-b/",
+    "top1_score": 12.904018860149606
+   },
+   {
+    "id": "u007",
+    "category": "admission",
+    "query": "як вступити на бакалаврат",
+    "n_rel": 3,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/5-veresnia-vidbudet-sia-lektsiia-taking-ukrainian-tech-startups-global-dlia-studentiv-iaki-vstupyly-na-novi-osvitni-prohramy/",
+    "top1_score": 12.770110071577971
+   },
+   {
+    "id": "u008",
+    "category": "money",
+    "query": "скільки коштує навчання",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/academics/",
+    "top1_score": 8.49494582554847
+   },
+   {
+    "id": "u009",
+    "category": "money",
+    "query": "як оплатити контракт",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/opryliudneno-spysky-rekomendovanykh-vstupnykiv-dlia-zarakhuvannia-na-navchannia-os-mahistr-na-fakultet-elektroniky-ta-komp-iuternykh-tekhnolohiy/",
+    "top1_score": 12.90343355737417
+   },
+   {
+    "id": "u010",
+    "category": "trap",
+    "query": "стипендія",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/konkurs-na-otrymannia-stypendiy-na-navchannia-stazhuvannia-v-universyteti-miniu-portuhaliia-v-ramkakh-prohramy-erasmus/",
+    "top1_score": 14.185137691098388
+   },
+   {
+    "id": "u011",
+    "category": "housing",
+    "query": "поселення в гуртожиток",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 3,
+    "top1": "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-rekomendovanykh-na-poselennia-v-hurtozhytok-2-y-etap-poselennia/",
+    "top1_score": 32.027371787008576
+   },
+   {
+    "id": "u012",
+    "category": "trap",
+    "query": "як взяти академвідпустку",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/prohrama-spilnoho-onlayn-mizhnarodnoho-navchannia-ob-iednuie-vykladachiv-studentiv-z-riznykh-krain/",
+    "top1_score": 6.124715364762181
+   },
+   {
+    "id": "u013",
+    "category": "exams",
+    "query": "коли перездача",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/hrafik-perezdach-zalikiv-ta-ispytiv/",
+    "top1_score": 23.65472274858608
+   },
+   {
+    "id": "u014",
+    "category": "trap",
+    "query": "перевестись на індивідуальний графік навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/hrafiky-vidpratsiuvan-na-1-y-semestr-2024-2025-n-r/",
+    "top1_score": 16.456823090242246
+   },
+   {
+    "id": "u015",
+    "category": "documents",
+    "query": "довідка з місця навчання",
+    "n_rel": 1,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/admission/institute-preparation/",
+    "top1_score": 13.670520571053064
+   },
+   {
+    "id": "u016",
+    "category": "trap",
+    "query": "як отримати корпоративну пошту студенту",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 13.10489065463833
+   },
+   {
+    "id": "u017",
+    "category": "mobility",
+    "query": "програма Erasmus для студентів",
+    "n_rel": 2,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/navchannia-bez-kordoniv-iak-erasmus-formuie-ievropeyskyy-dosvid-studentiv-lvivskoho-universytetu/",
+    "top1_score": 19.939744433805554
+   },
+   {
+    "id": "u018",
+    "category": "trap",
+    "query": "як записатись на вибіркові дисципліни",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/qqq/",
+    "top1_score": 6.468697589455784
+   },
+   {
+    "id": "u019",
+    "category": "trap",
+    "query": "чи є військова кафедра",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/employee/zlobin-h-h/",
+    "top1_score": 8.387279745095725
+   },
+   {
+    "id": "u020",
+    "category": "trap",
+    "query": "курси англійської мови",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/anhl-mova-fakhovoho-spriamuvannia-professional-english-122-kn/",
+    "top1_score": 21.522102186104544
+   },
+   {
+    "id": "u021",
+    "category": "wayfinding",
+    "query": "де аудиторія 128",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/career/",
+    "top1_score": 14.058446880583872
+   },
+   {
+    "id": "u022",
+    "category": "exams",
+    "query": "коли зимова сесія",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/students/zaochne-navchannia/",
+    "top1_score": 18.388619604375478
+   },
+   {
+    "id": "u023",
+    "category": "schedule",
+    "query": "розклад викладача",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/schedule-of-lecturers/",
+    "top1_score": 13.323006195318634
+   },
+   {
+    "id": "u024",
+    "category": "schedule",
+    "query": "розклад на завтра",
+    "n_rel": 1,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/vzhe-zavtra-cherhovyy-naukovyy-seminar-fakultetu-elektroniky-ta-komp-iuternykh-tekhnolohiy/",
+    "top1_score": 16.07606199161566
+   },
+   {
+    "id": "u025",
+    "category": "documents",
+    "query": "теми магістерських робіт",
+    "n_rel": 2,
+    "first_rank": 6,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/temy-kursovykh-robit-kn/",
+    "top1_score": 23.423629056022953
+   },
+   {
+    "id": "u026",
+    "category": "support",
+    "query": "психологічна допомога студентам",
+    "n_rel": 1,
+    "first_rank": 5,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/startup-jam-studenty-lvivskoho-universytetu-prezentuvaly-startapy-pidpryiemtsiam-z-ukrainy-ssha-nimechchyny-ta-shvetsii/",
+    "top1_score": 11.727497970415616
+   },
+   {
+    "id": "u027",
+    "category": "nav_colloquial",
+    "query": "хто наш куратор групи",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 13.110238643684848
+   },
+   {
+    "id": "u028",
+    "category": "info",
+    "query": "контакти кафедри оптоелектроніки",
+    "n_rel": 1,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/contacts/",
+    "top1_score": 19.053271444681926
+   },
+   {
+    "id": "u029",
+    "category": "trap",
+    "query": "як поновитися на навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/",
+    "top1_score": 8.49494582554847
+   },
+   {
+    "id": "u030",
+    "category": "trap",
+    "query": "як перевестися на іншу спеціальність",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/about/alumni/",
+    "top1_score": 9.894652410919438
+   },
+   {
+    "id": "u031",
+    "category": "admission",
+    "query": "документи для вступу в магістратуру",
+    "n_rel": 3,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/academics/master/curriculum-computer-technologies-2016/",
+    "top1_score": 23.00246920599693
+   },
+   {
+    "id": "u032",
+    "category": "money",
+    "query": "де взяти реквізити для оплати гуртожитку",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/",
+    "top1_score": 40.210641304112
+   }
+  ],
+  "embed": [
+   {
+    "id": "u001",
+    "category": "nav_direct",
+    "query": "деканат",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/about/administration/",
+    "top1_score": 0.8319306969642639
+   },
+   {
+    "id": "u002",
+    "category": "wayfinding",
+    "query": "вхід в деканат",
+    "n_rel": 2,
+    "first_rank": 9,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/korysna-informatsiya/",
+    "top1_score": 0.8533519506454468
+   },
+   {
+    "id": "u003",
+    "category": "wayfinding",
+    "query": "де знаходиться деканат",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/about/administration/",
+    "top1_score": 0.8411760330200195
+   },
+   {
+    "id": "u004",
+    "category": "trap",
+    "query": "години роботи деканату",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/",
+    "top1_score": 0.8470472097396851
+   },
+   {
+    "id": "u005",
+    "category": "person",
+    "query": "хто декан факультету електроніки",
+    "n_rel": 4,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/about/history-of-faculty/",
+    "top1_score": 0.8833784461021423
+   },
+   {
+    "id": "u006",
+    "category": "trap",
+    "query": "телефон приймальної комісії",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/master/curriculum-computer-technologies-2017/",
+    "top1_score": 0.8457524180412292
+   },
+   {
+    "id": "u007",
+    "category": "admission",
+    "query": "як вступити на бакалаврат",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/admission/vstupna-kampaniia-2021-2022-navchal-noho-roku/",
+    "top1_score": 0.8549041152000427
+   },
+   {
+    "id": "u008",
+    "category": "money",
+    "query": "скільки коштує навчання",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/academics/",
+    "top1_score": 0.8714488744735718
+   },
+   {
+    "id": "u009",
+    "category": "money",
+    "query": "як оплатити контракт",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/startuvav-proiekt-ukraine-global-faculty-zakordonni-profesory-z-providnykh-universytetiv-top-eksperty-ta-pidpryiemtsi-chytatymut-lektsii-onlayn-dlia-ukrainskoi-audytorii/",
+    "top1_score": 0.8374224901199341
+   },
+   {
+    "id": "u010",
+    "category": "trap",
+    "query": "стипендія",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-inzheneriia-prohramnoho-zabezpechennia-2023-r/",
+    "top1_score": 0.8598588705062866
+   },
+   {
+    "id": "u011",
+    "category": "housing",
+    "query": "поселення в гуртожиток",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 3,
+    "top1": "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-rekomendovanykh-na-poselennia-v-hurtozhytok-5-lvivskoho-natsionalnoho-universytetu-imeni-ivana-franka-vul-pasichna-62b-1-y-etap-poselennia-2/",
+    "top1_score": 0.8580873608589172
+   },
+   {
+    "id": "u012",
+    "category": "trap",
+    "query": "як взяти академвідпустку",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/startuvav-proiekt-ukraine-global-faculty-zakordonni-profesory-z-providnykh-universytetiv-top-eksperty-ta-pidpryiemtsi-chytatymut-lektsii-onlayn-dlia-ukrainskoi-audytorii/",
+    "top1_score": 0.8419836759567261
+   },
+   {
+    "id": "u013",
+    "category": "exams",
+    "query": "коли перездача",
+    "n_rel": 2,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/start-kar-iernykh-treninhiv-vid-ekspertiv-design-your-future/",
+    "top1_score": 0.8459560871124268
+   },
+   {
+    "id": "u014",
+    "category": "trap",
+    "query": "перевестись на індивідуальний графік навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/zasoby-hlybynnoho-navchannia-ipz/",
+    "top1_score": 0.8588539361953735
+   },
+   {
+    "id": "u015",
+    "category": "documents",
+    "query": "довідка з місця навчання",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/korysna-informatsiya/",
+    "top1_score": 0.8768728375434875
+   },
+   {
+    "id": "u016",
+    "category": "trap",
+    "query": "як отримати корпоративну пошту студенту",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/practice/",
+    "top1_score": 0.8487643003463745
+   },
+   {
+    "id": "u017",
+    "category": "mobility",
+    "query": "програма Erasmus для студентів",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/akademichna-mobilnist/",
+    "top1_score": 0.8897997140884399
+   },
+   {
+    "id": "u018",
+    "category": "trap",
+    "query": "як записатись на вибіркові дисципліни",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/master/curriculum-computer-technologies-2017/",
+    "top1_score": 0.8759650588035583
+   },
+   {
+    "id": "u019",
+    "category": "trap",
+    "query": "чи є військова кафедра",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/department/radiophysics-and-computer-technologies/",
+    "top1_score": 0.8435450792312622
+   },
+   {
+    "id": "u020",
+    "category": "trap",
+    "query": "курси англійської мови",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/anhl-mova-fakhovoho-spriamuvannia/",
+    "top1_score": 0.8851380348205566
+   },
+   {
+    "id": "u021",
+    "category": "wayfinding",
+    "query": "де аудиторія 128",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/cloud-computing-and-big-data-122-kn/",
+    "top1_score": 0.8344945907592773
+   },
+   {
+    "id": "u022",
+    "category": "exams",
+    "query": "коли зимова сесія",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/academics/zaochna-forma/",
+    "top1_score": 0.8754312992095947
+   },
+   {
+    "id": "u023",
+    "category": "schedule",
+    "query": "розклад викладача",
+    "n_rel": 1,
+    "first_rank": 7,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/career/",
+    "top1_score": 0.8401159048080444
+   },
+   {
+    "id": "u024",
+    "category": "schedule",
+    "query": "розклад на завтра",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-inzheneriia-prohramnoho-zabezpechennia-2023-r/",
+    "top1_score": 0.8328367471694946
+   },
+   {
+    "id": "u025",
+    "category": "documents",
+    "query": "теми магістерських робіт",
+    "n_rel": 2,
+    "first_rank": 4,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/course/mahisterskyy-seminar/",
+    "top1_score": 0.8760021924972534
+   },
+   {
+    "id": "u026",
+    "category": "support",
+    "query": "психологічна допомога студентам",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/",
+    "top1_score": 0.8635183572769165
+   },
+   {
+    "id": "u027",
+    "category": "nav_colloquial",
+    "query": "хто наш куратор групи",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 0.8343400359153748
+   },
+   {
+    "id": "u028",
+    "category": "info",
+    "query": "контакти кафедри оптоелектроніки",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/department/optoelectronics-2/",
+    "top1_score": 0.9032970666885376
+   },
+   {
+    "id": "u029",
+    "category": "trap",
+    "query": "як поновитися на навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/my-vidkryvaiemo-novu-osvitniu-prohramu-elektronika-ta-komp-iuterni-systemy/",
+    "top1_score": 0.8631527423858643
+   },
+   {
+    "id": "u030",
+    "category": "trap",
+    "query": "як перевестися на іншу спеціальність",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/admission/your-prospects/",
+    "top1_score": 0.8567076921463013
+   },
+   {
+    "id": "u031",
+    "category": "admission",
+    "query": "документи для вступу в магістратуру",
+    "n_rel": 3,
+    "first_rank": 6,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/osnovy-mashynnoho-navchannia-ist/",
+    "top1_score": 0.8381775617599487
+   },
+   {
+    "id": "u032",
+    "category": "money",
+    "query": "де взяти реквізити для оплати гуртожитку",
+    "n_rel": 1,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/startuvav-proiekt-ukraine-global-faculty-zakordonni-profesory-z-providnykh-universytetiv-top-eksperty-ta-pidpryiemtsi-chytatymut-lektsii-onlayn-dlia-ukrainskoi-audytorii/",
+    "top1_score": 0.8568226099014282
+   }
+  ],
+  "hybrid": [
+   {
+    "id": "u001",
+    "category": "nav_direct",
+    "query": "деканат",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/about/administration/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "u002",
+    "category": "wayfinding",
+    "query": "вхід в деканат",
+    "n_rel": 2,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/about/staff/",
+    "top1_score": 0.031754032258064516
+   },
+   {
+    "id": "u003",
+    "category": "wayfinding",
+    "query": "де знаходиться деканат",
+    "n_rel": 2,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/about/staff/",
+    "top1_score": 0.03200204813108039
+   },
+   {
+    "id": "u004",
+    "category": "trap",
+    "query": "години роботи деканату",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/robototekhnika-126-informatsiyni-systemy-ta-tekhnolohii/",
+    "top1_score": 0.02946236559139785
+   },
+   {
+    "id": "u005",
+    "category": "person",
+    "query": "хто декан факультету електроніки",
+    "n_rel": 4,
+    "first_rank": 2,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/about/history-of-faculty/",
+    "top1_score": 0.03278688524590164
+   },
+   {
+    "id": "u006",
+    "category": "trap",
+    "query": "телефон приймальної комісії",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/department/radioelectronics-and-computer-sciences/",
+    "top1_score": 0.029083245521601686
+   },
+   {
+    "id": "u007",
+    "category": "admission",
+    "query": "як вступити на бакалаврат",
+    "n_rel": 3,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/academics/bachelor/navchalnyy-plan-vysokoproduktyvnyy-komp-iutynh/",
+    "top1_score": 0.030090497737556562
+   },
+   {
+    "id": "u008",
+    "category": "money",
+    "query": "скільки коштує навчання",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/academics/",
+    "top1_score": 0.03278688524590164
+   },
+   {
+    "id": "u009",
+    "category": "money",
+    "query": "як оплатити контракт",
+    "n_rel": 1,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/opryliudneno-spysky-rekomendovanykh-vstupnykiv-dlia-zarakhuvannia-na-navchannia-os-mahistr-na-fakultet-elektroniky-ta-komp-iuternykh-tekhnolohiy/",
+    "top1_score": 0.01639344262295082
+   },
+   {
+    "id": "u010",
+    "category": "trap",
+    "query": "стипендія",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/",
+    "top1_score": 0.031754032258064516
+   },
+   {
+    "id": "u011",
+    "category": "housing",
+    "query": "поселення в гуртожиток",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 3,
+    "top1": "https://electronics.lnu.edu.ua/news/spysok-studentiv-1-ho-kursu-bakalavratu-rekomendovanykh-na-poselennia-v-hurtozhytok-2-y-etap-poselennia/",
+    "top1_score": 0.03252247488101534
+   },
+   {
+    "id": "u012",
+    "category": "trap",
+    "query": "як взяти академвідпустку",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/startuvav-proiekt-ukraine-global-faculty-zakordonni-profesory-z-providnykh-universytetiv-top-eksperty-ta-pidpryiemtsi-chytatymut-lektsii-onlayn-dlia-ukrainskoi-audytorii/",
+    "top1_score": 0.029551337359792925
+   },
+   {
+    "id": "u013",
+    "category": "exams",
+    "query": "коли перездача",
+    "n_rel": 2,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/hrafik-perezdach-zalikiv-ta-ispytiv/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "u014",
+    "category": "trap",
+    "query": "перевестись на індивідуальний графік навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/bachelor/curriculum-micro-and-nanotechnics/",
+    "top1_score": 0.030834914611005692
+   },
+   {
+    "id": "u015",
+    "category": "documents",
+    "query": "довідка з місця навчання",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/korysna-informatsiya/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "u016",
+    "category": "trap",
+    "query": "як отримати корпоративну пошту студенту",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/news/skoro-startuie-bezkoshtovnyy-mini-kurs-za-napriamkom-python-dlia-studentiv-lnu-im-i-franka-fakul-tet-elektroniky-ta-komp-iuternykh-tekhnolohiy/",
+    "top1_score": 0.029957522915269395
+   },
+   {
+    "id": "u017",
+    "category": "mobility",
+    "query": "програма Erasmus для студентів",
+    "n_rel": 2,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/navchannia-bez-kordoniv-iak-erasmus-formuie-ievropeyskyy-dosvid-studentiv-lvivskoho-universytetu/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "u018",
+    "category": "trap",
+    "query": "як записатись на вибіркові дисципліни",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/bachelor/curriculum-software-engineering/",
+    "top1_score": 0.03125763125763126
+   },
+   {
+    "id": "u019",
+    "category": "trap",
+    "query": "чи є військова кафедра",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/department/radiophysics-and-computer-technologies/",
+    "top1_score": 0.031099324975891997
+   },
+   {
+    "id": "u020",
+    "category": "trap",
+    "query": "курси англійської мови",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/course/anhl-mova-fakhovoho-spriamuvannia-professional-english-122-kn/",
+    "top1_score": 0.03252247488101534
+   },
+   {
+    "id": "u021",
+    "category": "wayfinding",
+    "query": "де аудиторія 128",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/career/",
+    "top1_score": 0.01639344262295082
+   },
+   {
+    "id": "u022",
+    "category": "exams",
+    "query": "коли зимова сесія",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 2,
+    "top1": "https://electronics.lnu.edu.ua/students/zaochne-navchannia/",
+    "top1_score": 0.03252247488101534
+   },
+   {
+    "id": "u023",
+    "category": "schedule",
+    "query": "розклад викладача",
+    "n_rel": 1,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/career/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "u024",
+    "category": "schedule",
+    "query": "розклад на завтра",
+    "n_rel": 1,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/news/vzhe-zavtra-cherhovyy-naukovyy-seminar-fakultetu-elektroniky-ta-komp-iuternykh-tekhnolohiy/",
+    "top1_score": 0.03177805800756621
+   },
+   {
+    "id": "u025",
+    "category": "documents",
+    "query": "теми магістерських робіт",
+    "n_rel": 2,
+    "first_rank": 3,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/temy-kursovykh-robit-kn/",
+    "top1_score": 0.03177805800756621
+   },
+   {
+    "id": "u026",
+    "category": "support",
+    "query": "психологічна допомога студентам",
+    "n_rel": 1,
+    "first_rank": 8,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 0.031754032258064516
+   },
+   {
+    "id": "u027",
+    "category": "nav_colloquial",
+    "query": "хто наш куратор групи",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/",
+    "top1_score": 0.03278688524590164
+   },
+   {
+    "id": "u028",
+    "category": "info",
+    "query": "контакти кафедри оптоелектроніки",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/department/optoelectronics-2/",
+    "top1_score": 0.03252247488101534
+   },
+   {
+    "id": "u029",
+    "category": "trap",
+    "query": "як поновитися на навчання",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/academics/postgraduates/",
+    "top1_score": 0.02878726010616578
+   },
+   {
+    "id": "u030",
+    "category": "trap",
+    "query": "як перевестися на іншу спеціальність",
+    "n_rel": 0,
+    "first_rank": null,
+    "found_in_top5": 0,
+    "top1": "https://electronics.lnu.edu.ua/admission/your-prospects/",
+    "top1_score": 0.03177805800756621
+   },
+   {
+    "id": "u031",
+    "category": "admission",
+    "query": "документи для вступу в магістратуру",
+    "n_rel": 3,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/admission/your-prospects/",
+    "top1_score": 0.031024531024531024
+   },
+   {
+    "id": "u032",
+    "category": "money",
+    "query": "де взяти реквізити для оплати гуртожитку",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/",
+    "top1_score": 0.03252247488101534
+   }
+  ]
+ }
+}
