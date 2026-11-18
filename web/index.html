@@ -469,6 +469,12 @@ load();
 st.convs = st.convs.filter(c => c.msgs.length || c.id === st.active);
 st.convs.forEach(c => c.msgs.forEach(m => { delete m.pending; }));
 render(); loadInfo();
+// посилання на питання: /?q=розклад%20пар (і необов'язково &m=bm25|embed|hybrid) — одразу ставить питання в новій розмові
+(() => {
+  const p = new URLSearchParams(location.search), q = p.get('q'), m = p.get('m');
+  if(m && METHODS[m]){ st.method = m; save(); render(); }
+  if(q){ if(active() && active().msgs.length) newConv(); history.replaceState(null, '', location.pathname); ask(q); }
+})();
 </script>
 </body>
 </html>

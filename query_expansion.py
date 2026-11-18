@@ -8,6 +8,10 @@
 Словник складений за назвами спеціальностей і освітніх програм на сайті
 (напр. «121 Інженерія програмного забезпечення», «126 Інформаційні системи та
 технології», «122 Комп'ютерні науки», «Високопродуктивний комп'ютинг»).
+
+Синоніми (19.11.2026): слова, якими користувач називає те, що на сайті підписано
+інакше, зокрема англійською («Email» на сторінці «Контакти»). Додаються так само,
+як розшифровки абревіатур.
 """
 import re
 
@@ -18,18 +22,26 @@ ABBREVIATIONS = {
     "впк": "високопродуктивний комп'ютинг",
 }
 
+SYNONYMS = {
+    "пошта": "email e-mail",
+    "пошти": "email e-mail",
+    "пошту": "email e-mail",
+    "мейл": "email e-mail",
+    "імейл": "email e-mail",
+}
+
 _TOKEN = re.compile(r"[\w'’]+", re.UNICODE)
 
 
 def expand_query(query: str) -> str:
     extra = []
     for tok in _TOKEN.findall(query.lower()):
-        full = ABBREVIATIONS.get(tok)
+        full = ABBREVIATIONS.get(tok) or SYNONYMS.get(tok)
         if full and full not in extra:
             extra.append(full)
     return query if not extra else query + " " + " ".join(extra)
 
 
 if __name__ == "__main__":
-    for q in ["навчальний план ІПЗ", "теми КН", "рецепт борщу"]:
+    for q in ["навчальний план ІПЗ", "теми КН", "електронна пошта факультету", "рецепт борщу"]:
         print(q, "->", expand_query(q))

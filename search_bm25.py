@@ -22,6 +22,18 @@ _morph = pymorphy3.MorphAnalyzer(lang="uk")
 _cache = {}
 
 
+def _lemma(w):
+    """Лема слова. Прислівники на -о/-е, утворені від прикметників («заочно», «дистанційно»),
+    зводимо до прикметника («заочний»): pymorphy3 вважає їх окремими словами, і тоді
+    запит «як навчатися заочно» не збігається зі сторінкою «Заочне навчання»."""
+    p = _morph.parse(w)[0]
+    if "ADVB" in p.tag and len(w) > 4 and w[-1] in "oое":
+        adj = w[:-1] + "ий"
+        if _morph.word_is_known(adj):
+            return adj
+    return p.normal_form
+
+
 def tokenize(text, lemma=True):
     out = []
     for w in TOKEN_RE.findall(text.lower().replace("’", "'")):
@@ -29,7 +41,7 @@ def tokenize(text, lemma=True):
             continue
         if lemma:
             if w not in _cache:
-                _cache[w] = _morph.parse(w)[0].normal_form
+                _cache[w] = _lemma(w)
             w = _cache[w]
         out.append(w)
     return out
@@ -70,7 +82,7 @@ class BM25Search:
                     s0, c0 = best.get(pid, (0.0, self.page_first[pid]))
                     best[pid] = (s0 + self.title_weight * ts, c0)
         ranked = sorted(best.values(), key=lambda x: -x[0])[:top_pages]
-        return [{"score": float(s), "title": c["title"], "url": c["url"],
+        return [{"score": float(s), "title": c["title"], "context": c.get("context", c["title"]), "url": c["url"],
                  "snippet": c["text"][:160].replace("\n", " "), "text": c["text"]} for s, c in ranked]
 
 

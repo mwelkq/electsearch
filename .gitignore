@@ -19,4 +19,7 @@ _backup/
 
 # скриншоти процесу роботи (для тексту курсової), але не ресурси сайту
 *.png
+*.jpg
 !web/*.png
+!screenshots/*.png
+!screenshots/*.jpg

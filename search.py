@@ -82,16 +82,17 @@ def rank_pages(scores, chunks, top_pages):
         if c["page_id"] not in best or s > best[c["page_id"]][0]:
             best[c["page_id"]] = (float(s), c)
     ranked = sorted(best.values(), key=lambda x: -x[0])[:top_pages]
-    return [{"score": s, "title": c["title"], "url": c["url"],
+    return [{"score": s, "title": c["title"], "context": c.get("context", c["title"]), "url": c["url"],
              "snippet": c["text"][:160].replace("\n", " "), "text": c["text"]} for s, c in ranked]
 
 
-def rrf(result_lists, top_pages=5, k=RRF_K):
-    """Reciprocal Rank Fusion: score(d) = sum 1/(k + rank_i(d))."""
+def rrf(result_lists, top_pages=5, k=RRF_K, weights=None):
+    """Reciprocal Rank Fusion: score(d) = sum w_i / (k + rank_i(d)). weights=None -> усі 1."""
     agg, info = {}, {}
-    for lst in result_lists:
+    weights = weights or [1.0] * len(result_lists)
+    for lst, w in zip(result_lists, weights):
         for rank, r in enumerate(lst, 1):
-            agg[r["url"]] = agg.get(r["url"], 0.0) + 1.0 / (k + rank)
+            agg[r["url"]] = agg.get(r["url"], 0.0) + w / (k + rank)
             info[r["url"]] = r
     out = sorted(agg.items(), key=lambda x: -x[1])[:top_pages]
     return [dict(info[u], score=s) for u, s in out]
@@ -101,8 +102,9 @@ class Searcher:
     """Єдиний інтерфейс: method in {'bm25', 'embed', 'hybrid'}."""
 
     def __init__(self, chunks_path="data/chunks_v2.jsonl", model="intfloat/multilingual-e5-small", max_len=256,
-                 title_weight=1.0):
+                 title_weight=1.0, bm25_weight=1.0):
         self.bm25 = BM25Search(chunks_path, title_weight=title_weight)
+        self.bm25_weight = bm25_weight  # вага BM25 у RRF (embeddings = 1)
         stem = Path(chunks_path).stem
         self.embed = EmbedSearch(self.bm25.chunks, model, max_len=max_len,
                                  index_tag="" if stem == "chunks" else stem)
@@ -115,7 +117,8 @@ class Searcher:
         if method == "embed":
             return self.embed.search(query, k)
         pool = 20  # для гібриду беремо ширший топ кожного методу
-        return rrf([self.bm25.search(query, pool), self.embed.search(query, pool)], k)
+        return rrf([self.bm25.search(query, pool), self.embed.search(query, pool)], k,
+                   weights=[self.bm25_weight, 1.0])
 
 
 def show_all(s, query, k):

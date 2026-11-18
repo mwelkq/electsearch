@@ -73,7 +73,7 @@ def startup():
 class AskRequest(BaseModel):
     question: str = Field(..., min_length=2, max_length=MAX_QUESTION)
     method: str = "hybrid"
-    k: int = Field(5, ge=1, le=10)
+    k: int = Field(8, ge=1, le=10)  # 8: експ. 8 (19.11), точність RAG 0.942 -> 0.981
 
 
 def _check_method(method):
