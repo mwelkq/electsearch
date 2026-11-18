@@ -105,7 +105,8 @@ def main():
     ap.add_argument("--model", default="intfloat/multilingual-e5-small")
     ap.add_argument("--max-len", type=int, default=256)
     ap.add_argument("--title-weight", type=float, default=1.0, help="вага заголовка в BM25 (0 = як до 18.11)")
-    ap.add_argument("--set", default="main", choices=["main", "heldout", "all"], help="який набір запитів оцінювати")
+    ap.add_argument("--no-lemma", action="store_true", help="BM25 без лематизації (гіпотеза H4)")
+    ap.add_argument("--set", default="main", choices=["main", "heldout", "user", "all"], help="який набір запитів оцінювати")
     ap.add_argument("--expand", action="store_true", help="розширювати абревіатури в запитах")
     ap.add_argument("--include-unreviewed", action="store_true", help="разом із непереглянутими запитами (для контрольного набору)")
     ap.add_argument("--only-reviewed", action="store_true", help="брати лише запити з reviewed=true")
@@ -126,14 +127,14 @@ def main():
         from search_bm25 import BM25Search
 
         class _S:  # мінімальний інтерфейс без завантаження моделі
-            def __init__(self): self.b = BM25Search(args.chunks, title_weight=args.title_weight)
+            def __init__(self): self.b = BM25Search(args.chunks, lemma=not args.no_lemma, title_weight=args.title_weight)
             def search(self, q, m, k, expand=False):
                 from query_expansion import expand_query
                 return self.b.search(expand_query(q) if expand else q, k)
         searcher = _S()
     else:
         from search import Searcher
-        searcher = Searcher(args.chunks, args.model, args.max_len, args.title_weight)
+        searcher = Searcher(args.chunks, args.model, args.max_len, args.title_weight, lemma=not args.no_lemma)
 
     all_rows, summary = {}, {}
     for m in args.methods:
@@ -168,7 +169,8 @@ def main():
     print("\nПастки (топ-1 і оцінка; чим вища оцінка, тим «впевненіше» метод помиляється):")
     for i, q in enumerate(queries):
         if not q["relevant"]:
-            print("  " + q["query"] + " | " + " | ".join(f"{m}: {all_rows[m][i]['top1_score']:.2f}" for m in args.methods))
+            fmt = lambda v: "нічого" if v is None else f"{v:.2f}"   # BM25 без збігів повертає порожній список
+            print("  " + q["query"] + " | " + " | ".join(f"{m}: {fmt(all_rows[m][i]['top1_score'])}" for m in args.methods))
 
     boot = bootstrap(all_rows, args.methods)
     print("\n95% довірчі інтервали (bootstrap по запитах, 10 000 повторів)")
@@ -184,7 +186,7 @@ def main():
             print(f"  {star} {metric:<6} {name:<18} {d:+.3f}  [{lo:+.3f} ; {hi:+.3f}]")
 
     out = args.out or str(ROOT / "eval" / f"results_{args.tag}.json")
-    json.dump({"config": {"model": args.model, "max_len": args.max_len, "chunks": args.chunks, "title_weight": args.title_weight, "expand": args.expand}, "summary": summary, "bootstrap": boot, "rows": all_rows},
+    json.dump({"config": {"model": args.model, "max_len": args.max_len, "chunks": args.chunks, "title_weight": args.title_weight, "expand": args.expand, "lemma": not args.no_lemma}, "summary": summary, "bootstrap": boot, "rows": all_rows},
               open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"\nДеталі збережено: {out}")
 

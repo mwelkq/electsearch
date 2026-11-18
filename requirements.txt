@@ -1,10 +1,12 @@
-requests
-beautifulsoup4
-lxml
-pymorphy3
-pymorphy3-dicts-uk
-rank-bm25
-sentence-transformers
-numpy
-fastapi
-uvicorn
+# версії, на яких проводились експерименти (листопад 2026)
+requests==2.32.5
+beautifulsoup4==4.15.0
+lxml==6.1.3
+pymorphy3==2.0.6
+pymorphy3-dicts-uk==2.4.1.1.1663094765
+rank-bm25==0.2.2
+sentence-transformers==6.2.0
+numpy==2.4.2
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.3

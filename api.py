@@ -9,14 +9,25 @@
   GET  /search?q=...&method=hybrid&k=5 лише пошук (без LLM)
   POST /ask {"question": "...", "method": "hybrid"}   пошук + LLM, повертає рекомендовану сторінку
   GET  /                               чат-інтерфейс (web/index.html)
+
+Налаштування через змінні середовища (див. README.md):
+  GEMINI_API_KEY, GEMINI_MODEL, CHUNKS_PATH, EMBED_MODEL, EMBED_MAX_LEN, LAZY_INDEX
+  ASK_LIMIT_PER_MIN  (10)  — скільки /ask на хвилину з однієї адреси (0 = без ліміту)
+  ALLOWED_ORIGINS    ("")  — CORS: домени через кому, якщо фронтенд на іншому домені
+  TRUST_PROXY        ("0") — 1, якщо сервіс стоїть за nginx/проксі (брати IP з X-Forwarded-For)
+  LOG_QUERIES        ("1") — писати анонімний журнал запитів queries_log.jsonl (без IP)
+  RUNTIME_DIR     (data/)  — тека для feedback.jsonl і queries_log.jsonl (у Docker — том)
 """
 import json
 import os
+import threading
 import time
+from collections import defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
@@ -30,9 +41,52 @@ MAX_LEN = int(os.environ.get("EMBED_MAX_LEN", "256"))
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 FALLBACKS = tuple(m for m in ("gemini-3.5-flash",) if m != MODEL)
 MAX_QUESTION = 300
+ASK_LIMIT = int(os.environ.get("ASK_LIMIT_PER_MIN", "10"))
+TRUST_PROXY = os.environ.get("TRUST_PROXY") == "1"
+LOG_QUERIES = os.environ.get("LOG_QUERIES", "1") == "1"
+RUNTIME = Path(os.environ.get("RUNTIME_DIR", str(ROOT / "data")))  # куди писати відгуки й журнал
+ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()]
 
 app = FastAPI(title="Вебпомічник навігації сайтом факультету")
+if ORIGINS:  # інтерфейс віддається цим же сервером, тож CORS потрібен лише для іншого домену
+    app.add_middleware(CORSMiddleware, allow_origins=ORIGINS, allow_methods=["GET", "POST"],
+                       allow_headers=["Content-Type"])
 state = {"searcher": None, "key": None}
+_lock = threading.Lock()
+_hits = defaultdict(deque)  # IP -> час останніх запитів /ask (ковзне вікно 60 с)
+
+
+def _client_ip(request):
+    if TRUST_PROXY and request.headers.get("x-forwarded-for"):
+        return request.headers["x-forwarded-for"].split(",")[0].strip()
+    return request.client.host if request.client else "?"
+
+
+def rate_limit(request):
+    """Простий ліміт у пам'яті: безкоштовна квота Gemini спільна для всіх користувачів,
+    тож один користувач (чи бот) не повинен її вичерпати."""
+    if ASK_LIMIT <= 0:
+        return
+    now, ip = time.time(), _client_ip(request)
+    with _lock:
+        q = _hits[ip]
+        while q and now - q[0] > 60:
+            q.popleft()
+        if len(q) >= ASK_LIMIT:
+            raise HTTPException(429, f"Забагато запитів: не більше {ASK_LIMIT} на хвилину. Спробуйте трохи згодом.")
+        q.append(now)
+        if len(_hits) > 10000:  # не даємо словнику рости безмежно
+            for k in [k for k, v in _hits.items() if not v or now - v[-1] > 60]:
+                del _hits[k]
+
+
+def log_query(rec):
+    """Анонімний журнал (без IP): реальні запити користувачів — матеріал для оцінки системи."""
+    if not LOG_QUERIES:
+        return
+    rec = rec | {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    with _lock, (RUNTIME / "queries_log.jsonl").open("a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
 def index_info():
@@ -104,7 +158,7 @@ class Feedback(BaseModel):
 def feedback(fb: Feedback):
     """Відгук користувача «Корисно? Так/Ні» — дописуємо в data/feedback.jsonl (для оцінки на реальних запитах)."""
     rec = fb.model_dump() | {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds")}
-    with (ROOT / "data" / "feedback.jsonl").open("a", encoding="utf-8") as f:
+    with (RUNTIME / "feedback.jsonl").open("a", encoding="utf-8") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     return {"ok": True}
 
@@ -129,8 +183,9 @@ class _Cached:
 
 
 @app.post("/ask")
-def ask(req: AskRequest):
+def ask(req: AskRequest, request: Request):
     _check_method(req.method)
+    rate_limit(request)
     if not state["key"]:
         raise HTTPException(503, "Не задано GEMINI_API_KEY (файл .env)")
     t0 = time.time()
@@ -141,10 +196,15 @@ def ask(req: AskRequest):
                                   MODEL, True, fallbacks=FALLBACKS)
     except Exception:
         # LLM недоступна: віддаємо результати пошуку, щоб помічник лишався корисним
+        log_query({"question": req.question, "method": req.method, "k": req.k, "degraded": True,
+                   "retrieved": [p["url"] for p in pages], "latency": round(time.time() - t0, 2)})
         return {"found": None, "answer": "Мовна модель зараз недоступна. Ось що знайшов пошук за вашим запитом.",
                 "recommended": None, "alternatives": [], "results": [_page(p) for p in pages],
                 "degraded": True, "latency": round(time.time() - t0, 2)}
     rec = res["recommended_url"]
+    log_query({"question": req.question, "method": req.method, "k": req.k, "degraded": False,
+               "found": res["found"], "recommended": rec, "model": res["model_used"],
+               "retrieved": [p["url"] for p in pages], "latency": round(time.time() - t0, 2)})
     return {
         "found": res["found"],
         "answer": res["answer"],

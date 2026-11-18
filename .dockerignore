@@ -1,0 +1,17 @@
+.env
+.git
+.venv
+__pycache__
+_backup
+screenshots
+eval
+tools
+data/*.npy
+data/emb_parts_*
+data/chunks.jsonl
+data/feedback.jsonl
+data/queries_log.jsonl
+*.png
+*.jpg
+!web/*.png
+*.md

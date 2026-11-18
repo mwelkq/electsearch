@@ -102,8 +102,8 @@ class Searcher:
     """Єдиний інтерфейс: method in {'bm25', 'embed', 'hybrid'}."""
 
     def __init__(self, chunks_path="data/chunks_v2.jsonl", model="intfloat/multilingual-e5-small", max_len=256,
-                 title_weight=1.0, bm25_weight=1.0):
-        self.bm25 = BM25Search(chunks_path, title_weight=title_weight)
+                 title_weight=1.0, bm25_weight=1.0, lemma=True):
+        self.bm25 = BM25Search(chunks_path, lemma=lemma, title_weight=title_weight)
         self.bm25_weight = bm25_weight  # вага BM25 у RRF (embeddings = 1)
         stem = Path(chunks_path).stem
         self.embed = EmbedSearch(self.bm25.chunks, model, max_len=max_len,

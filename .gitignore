@@ -23,3 +23,8 @@ _backup/
 !web/*.png
 !screenshots/*.png
 !screenshots/*.jpg
+
+# журнал реальних запитів з вебінтерфейсу
+data/queries_log.jsonl
+data/runtime/
+!figures/*.png

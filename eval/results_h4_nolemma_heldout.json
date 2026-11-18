@@ -1,0 +1,225 @@
+{
+ "config": {
+  "model": "intfloat/multilingual-e5-small",
+  "max_len": 256,
+  "chunks": "C:\\Users\\1\\Desktop\\унік\\курсова робота\\data\\chunks_v2.jsonl",
+  "title_weight": 1.0,
+  "expand": true,
+  "lemma": false
+ },
+ "summary": {
+  "bm25": {
+   "all": {
+    "n": 6,
+    "Hit@1": 0.8333333333333334,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.9166666666666666,
+    "Recall@5": 1.0
+   },
+   "abbrev": {
+    "n": 6,
+    "Hit@1": 0.8333333333333334,
+    "Hit@3": 1.0,
+    "Hit@5": 1.0,
+    "MRR": 0.9166666666666666,
+    "Recall@5": 1.0
+   }
+  },
+  "hybrid": {
+   "all": {
+    "n": 6,
+    "Hit@1": 0.6666666666666666,
+    "Hit@3": 0.8333333333333334,
+    "Hit@5": 1.0,
+    "MRR": 0.7916666666666666,
+    "Recall@5": 1.0
+   },
+   "abbrev": {
+    "n": 6,
+    "Hit@1": 0.6666666666666666,
+    "Hit@3": 0.8333333333333334,
+    "Hit@5": 1.0,
+    "MRR": 0.7916666666666666,
+    "Recall@5": 1.0
+   }
+  }
+ },
+ "bootstrap": {
+  "ci": {
+   "bm25|Hit@1": [
+    0.8333333333333334,
+    0.5,
+    1.0
+   ],
+   "hybrid|Hit@1": [
+    0.6666666666666666,
+    0.3333333333333333,
+    1.0
+   ],
+   "bm25|Hit@3": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "hybrid|Hit@3": [
+    0.8333333333333334,
+    0.5,
+    1.0
+   ],
+   "bm25|MRR": [
+    0.9166666666666666,
+    0.75,
+    1.0
+   ],
+   "hybrid|MRR": [
+    0.7916666666666666,
+    0.5416666666666666,
+    1.0
+   ]
+  },
+  "diff": {
+   "hybrid - bm25|Hit@1": [
+    -0.16666666666666666,
+    -0.6666666666666666,
+    0.3333333333333333
+   ],
+   "hybrid - bm25|Hit@3": [
+    -0.16666666666666666,
+    -0.5,
+    0.0
+   ],
+   "hybrid - bm25|MRR": [
+    -0.125,
+    -0.4583333333333333,
+    0.16666666666666666
+   ]
+  }
+ },
+ "rows": {
+  "bm25": [
+   {
+    "id": "h001",
+    "category": "abbrev",
+    "query": "силабуси ВПК 2022",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-vysokoproduktyvnyy-komp-iutynh-2022-r/",
+    "top1_score": 34.85590498422457
+   },
+   {
+    "id": "h002",
+    "category": "abbrev",
+    "query": "силабуси КН 2022",
+    "n_rel": 1,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/robochi-navchalni-prohramy-ok-osvitnoi-prohramy-komp-iuterni-nauky/",
+    "top1_score": 24.115159605257723
+   },
+   {
+    "id": "h003",
+    "category": "abbrev",
+    "query": "обговорення освітньої програми ВПК",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-vysokoproduktyvnyy-komp-iutynh/",
+    "top1_score": 58.70031450308811
+   },
+   {
+    "id": "h004",
+    "category": "abbrev",
+    "query": "обговорення освітньої програми КН",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-komp-iuterni-nauky/",
+    "top1_score": 43.444238589509354
+   },
+   {
+    "id": "h005",
+    "category": "abbrev",
+    "query": "силабуси ІПЗ 2019",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-inzheneriia-prohramnoho-zabezpechennia-2019-r-onovleni-2023-r/",
+    "top1_score": 34.00057360162569
+   },
+   {
+    "id": "h006",
+    "category": "abbrev",
+    "query": "робочі навчальні програми ІПЗ",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/robochi-navchalni-prohramy-ok-osvitnoi-prohramy-inzheneriia-prohramnoho-zabezpechennia/",
+    "top1_score": 51.50049244665447
+   }
+  ],
+  "hybrid": [
+   {
+    "id": "h001",
+    "category": "abbrev",
+    "query": "силабуси ВПК 2022",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-vysokoproduktyvnyy-komp-iutynh-2022-r/",
+    "top1_score": 0.03177805800756621
+   },
+   {
+    "id": "h002",
+    "category": "abbrev",
+    "query": "силабуси КН 2022",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-komp-iuterni-nauky-2022-r/",
+    "top1_score": 0.03252247488101534
+   },
+   {
+    "id": "h003",
+    "category": "abbrev",
+    "query": "обговорення освітньої програми ВПК",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-vysokoproduktyvnyy-komp-iutynh/",
+    "top1_score": 0.03278688524590164
+   },
+   {
+    "id": "h004",
+    "category": "abbrev",
+    "query": "обговорення освітньої програми КН",
+    "n_rel": 1,
+    "first_rank": 1,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-komp-iuterni-nauky/",
+    "top1_score": 0.02938045560996381
+   },
+   {
+    "id": "h005",
+    "category": "abbrev",
+    "query": "силабуси ІПЗ 2019",
+    "n_rel": 1,
+    "first_rank": 2,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/course/osnovy-inzhenerii-prohramnoho-zabezpechennia-ipz/",
+    "top1_score": 0.032266458495966696
+   },
+   {
+    "id": "h006",
+    "category": "abbrev",
+    "query": "робочі навчальні програми ІПЗ",
+    "n_rel": 1,
+    "first_rank": 4,
+    "found_in_top5": 1,
+    "top1": "https://electronics.lnu.edu.ua/course/osnovy-inzhenerii-prohramnoho-zabezpechennia-ipz/",
+    "top1_score": 0.031754032258064516
+   }
+  ]
+ }
+}
