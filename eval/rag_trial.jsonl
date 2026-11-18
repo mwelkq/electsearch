@@ -1,0 +1,5 @@
+{"id": "q001", "category": "nav_direct", "query": "Історія факультету", "n_rel": 1, "error": "RuntimeError: Жодна модель не відповіла:\n  gemini-3.8-flash: ReadTimeout", "latency": 331.35}
+{"id": "q002", "category": "nav_direct", "query": "Контакти факультету", "n_rel": 1, "error": "RuntimeError: Жодна модель не відповіла:\n  gemini-3.8-flash: HTTP 503", "latency": 128.73}
+{"id": "q003", "category": "nav_direct", "query": "Центр 3D-технологій", "n_rel": 1, "error": "RuntimeError: Жодна модель не відповіла:\n  gemini-3.8-flash: ReadTimeout", "latency": 121.5}
+{"id": "q004", "category": "nav_direct", "query": "Лабораторії факультету", "n_rel": 1, "error": "RuntimeError: Жодна модель не відповіла:\n  gemini-3.8-flash: HTTP 429", "latency": 36.41}
+{"id": "q005", "category": "nav_direct", "query": "Кафедри факультету", "n_rel": 1, "error": "RuntimeError: Жодна модель не відповіла:\n  gemini-3.8-flash: HTTP 429", "latency": 32.12}

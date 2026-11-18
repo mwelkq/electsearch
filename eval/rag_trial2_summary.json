@@ -1,0 +1,35 @@
+{
+ "config": {
+  "queries": "C:\\Users\\1\\Desktop\\унік\\курсова робота\\eval\\queries.json",
+  "chunks": "C:\\Users\\1\\Desktop\\унік\\курсова робота\\data\\chunks.jsonl",
+  "method": "hybrid",
+  "model": "gemini-3.5-flash",
+  "embed_model": "intfloat/multilingual-e5-small",
+  "max_len": 256,
+  "k": 5,
+  "no_expand": false,
+  "fallback": false,
+  "set": "main",
+  "only_reviewed": true,
+  "include_unreviewed": false,
+  "limit": 5,
+  "sleep": 7.0,
+  "tag": "trial2"
+ },
+ "summary": {
+  "n_total": 5,
+  "n_errors": 2,
+  "n_answerable": 3,
+  "n_trap": 0,
+  "accuracy": 0.3333333333333333,
+  "retrieval_hit@5": 0.3333333333333333,
+  "accuracy_given_hit": 1.0,
+  "false_refusal": 0.0,
+  "wrong_page": 0.6666666666666666,
+  "hallucinated_url": 0.0,
+  "trap_correct_refusal": NaN,
+  "latency_median": 5.98,
+  "latency_p90": 14.036000000000001,
+  "fallback_used": 0
+ }
+}

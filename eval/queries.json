@@ -1,0 +1,644 @@
+[
+ {
+  "id": "q001",
+  "category": "nav_direct",
+  "query": "Історія факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/history-of-faculty/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q002",
+  "category": "nav_direct",
+  "query": "Контакти факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q003",
+  "category": "nav_direct",
+  "query": "Центр 3D-технологій",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/tsentr-3d-tekhnolohiy/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q004",
+  "category": "nav_direct",
+  "query": "Лабораторії факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/labs/"
+  ],
+  "note": "сторінка-хаб, мало тексту",
+  "reviewed": true
+ },
+ {
+  "id": "q005",
+  "category": "nav_direct",
+  "query": "Кафедри факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/departments/"
+  ],
+  "note": "сторінка-хаб",
+  "reviewed": true
+ },
+ {
+  "id": "q006",
+  "category": "nav_direct",
+  "query": "Аспірантура",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/postgraduates/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q007",
+  "category": "nav_direct",
+  "query": "Franko IT Day",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/research/franko-it-day/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q008",
+  "category": "nav_direct",
+  "query": "Студентське самоврядування",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/",
+   "https://electronics.lnu.edu.ua/students/government/"
+  ],
+  "note": "дві адреси з однаковим вмістом",
+  "reviewed": true
+ },
+ {
+  "id": "q009",
+  "category": "nav_direct",
+  "query": "Міжнародна співпраця",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/international-cooperation/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q010",
+  "category": "nav_direct",
+  "query": "Неформальна освіта",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/informal-education/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q011",
+  "category": "nav_colloquial",
+  "query": "де подивитись розклад пар",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/career/"
+  ],
+  "note": "адреса не містить слова «розклад»",
+  "reviewed": true
+ },
+ {
+  "id": "q012",
+  "category": "nav_colloquial",
+  "query": "розклад заліків і іспитів",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/rozklad-format-pdf/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q013",
+  "category": "nav_colloquial",
+  "query": "як заплатити за навчання",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/"
+  ],
+  "note": "адреса містить 2023-2024, вміст 2026-2027",
+  "reviewed": true
+ },
+ {
+  "id": "q014",
+  "category": "nav_colloquial",
+  "query": "хто очолює факультет",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/about/administration/",
+   "https://electronics.lnu.edu.ua/employee/furhala-yurij-myhajlovych/"
+  ],
+  "note": "декан Ю. Фургала",
+  "reviewed": true
+ },
+ {
+  "id": "q015",
+  "category": "nav_colloquial",
+  "query": "як отримати довідку для військкомату",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/korysna-informatsiya/"
+  ],
+  "note": "довідка про здобувача освіти",
+  "reviewed": true
+ },
+ {
+  "id": "q016",
+  "category": "nav_colloquial",
+  "query": "програма обміну студентів за кордон",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/akademichna-mobilnist/"
+  ],
+  "note": "Erasmus+",
+  "reviewed": true
+ },
+ {
+  "id": "q017",
+  "category": "nav_colloquial",
+  "query": "як знайти місце для проходження практики",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/practice/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q018",
+  "category": "nav_colloquial",
+  "query": "хто такі старости та порадники",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/group-leaders-and-advisers/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q019",
+  "category": "nav_colloquial",
+  "query": "як навчатися заочно",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/zaochne-navchannia/",
+   "https://electronics.lnu.edu.ua/academics/zaochna-forma/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q020",
+  "category": "nav_colloquial",
+  "query": "що таке Startup Jam",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/startup-jam/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q021",
+  "category": "nav_colloquial",
+  "query": "де інформація для випускників",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/informatsiia-dlia-vypusknykiv/"
+  ],
+  "note": "за перевіркою Марти: /about/alumni/ — це біографії випускників, не підходить",
+  "reviewed": true
+ },
+ {
+  "id": "q022",
+  "category": "nav_colloquial",
+  "query": "теми курсових робіт з комп'ютерних наук",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/temy-kursovykh-robit-kn/"
+  ],
+  "note": "ПЕРЕВІРИТИ: чи не підходить ще /temy-kursovykh-robit-ta-metodychni-vkazivky-dlia-ikh-vykonannia/ | Марта: сторінка веде на теми не лише КН, але ок",
+  "reviewed": true
+ },
+ {
+  "id": "q023",
+  "category": "info",
+  "query": "який мінімальний конкурсний бал для вступу на комп'ютерні науки",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/vstupna-kampaniia-2021-2022-navchal-noho-roku/"
+  ],
+  "note": "140 балів для F3 (за текстом сторінки)",
+  "reviewed": true
+ },
+ {
+  "id": "q024",
+  "category": "info",
+  "query": "коли починається настановча сесія у заочників",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/zaochne-navchannia/"
+  ],
+  "note": "21 вересня – 5 жовтня 2026",
+  "reviewed": true
+ },
+ {
+  "id": "q025",
+  "category": "info",
+  "query": "адреса факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q026",
+  "category": "info",
+  "query": "номер телефону деканату",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/"
+  ],
+  "note": "перевірити: чи це телефон деканату",
+  "reviewed": true
+ },
+ {
+  "id": "q027",
+  "category": "info",
+  "query": "електронна пошта факультету",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/contacts/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q028",
+  "category": "info",
+  "query": "які освітні програми є на бакалавраті",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/osvitni-programy/",
+   "https://electronics.lnu.edu.ua/admission/your-prospects/",
+   "https://electronics.lnu.edu.ua/academics/bachelor/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q029",
+  "category": "info",
+  "query": "як отримати дублікат диплома",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/korysna-informatsiya/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q030",
+  "category": "info",
+  "query": "хто завідує кафедрою системного проектування",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/department/system-design/"
+  ],
+  "note": "доцент Р. Я. Шувар (за текстом сторінки) | Марта: відповідь є на сторінці, але в розгорнутому блоці (accordion)",
+  "reviewed": true
+ },
+ {
+  "id": "q031",
+  "category": "info",
+  "query": "коли відкрили Центр 3D-технологій",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/tsentr-3d-tekhnolohiy/"
+  ],
+  "note": "22 липня 2025",
+  "reviewed": true
+ },
+ {
+  "id": "q032",
+  "category": "info",
+  "query": "реквізити для оплати навчання",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/oplata-za-navchannia-2023-2024-n-r/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q033",
+  "category": "info",
+  "query": "з якими ІТ-компаніями співпрацює кафедра системного проектування",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/department/system-design/"
+  ],
+  "note": "InfoPulse, GlobalLogic, EPAM… (за текстом сторінки) | Марта: відповідь є на сторінці, але в розгорнутому блоці (accordion)",
+  "reviewed": true
+ },
+ {
+  "id": "q034",
+  "category": "abbrev",
+  "query": "навчальний план ІПЗ",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/bachelor/curriculum-software-engineering/"
+  ],
+  "note": "ІПЗ = інженерія програмного забезпечення",
+  "reviewed": true
+ },
+ {
+  "id": "q035",
+  "category": "abbrev",
+  "query": "навчальний план КН магістратура",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/master/curriculum-computer-technologies-2017/"
+  ],
+  "note": "ПЕРЕВІРИТИ: який саме рік плану актуальний",
+  "reviewed": true
+ },
+ {
+  "id": "q036",
+  "category": "abbrev",
+  "query": "ВПК навчальний план",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/bachelor/navchalnyy-plan-vysokoproduktyvnyy-komp-iutynh/"
+  ],
+  "note": "ВПК = високопродуктивний комп'ютинг",
+  "reviewed": true
+ },
+ {
+  "id": "q037",
+  "category": "abbrev",
+  "query": "навчальний план ІСТ",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/academics/bachelor/curriculum-it-technologies/"
+  ],
+  "note": "ІСТ = інформаційні системи та технології",
+  "reviewed": true
+ },
+ {
+  "id": "q038",
+  "category": "abbrev",
+  "query": "теми бакалаврських робіт 122 КН",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/temy-bakalavrskykh-robit-122-komp-iuterni-nauky/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q039",
+  "category": "abbrev",
+  "query": "силабуси ІПЗ 2023",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-inzheneriia-prohramnoho-zabezpechennia-2023-r/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q040",
+  "category": "person",
+  "query": "пошта Костюк Лесі Антонівни",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/employee/kostyuk-lesya-antonivna/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q041",
+  "category": "person",
+  "query": "Фургала Юрій Михайлович",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/employee/furhala-yurij-myhajlovych/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q042",
+  "category": "person",
+  "query": "контакти Дуфанець Марти Василівни",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/employee/dufanets-marta-vasylivna/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q043",
+  "category": "person",
+  "query": "Катеринчук Іван Миколайович",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/employee/katerynchuk-ivan-mykolajovych/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q044",
+  "category": "person",
+  "query": "Крупич Олег",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/employee/krupych-oleh-mykolayovych/"
+  ],
+  "note": "неповне ім'я",
+  "reviewed": true
+ },
+ {
+  "id": "q045",
+  "category": "course",
+  "query": "хто читає основи програмування",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/osnovy-prohramuvannia-ipz/"
+  ],
+  "note": "ПЕРЕВІРИТИ: чи не підходять ще /course/prohramuvannya/, /course/prohramuvannia/ | Марта: «не ок» без пояснення — уточнити",
+  "reviewed": false
+ },
+ {
+  "id": "q046",
+  "category": "course",
+  "query": "дисципліна машинне навчання",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/mashynne-navchannia/",
+   "https://electronics.lnu.edu.ua/course/mashynne-navchannia-ta-shtuchnyy-intelekt-176/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q047",
+  "category": "course",
+  "query": "дискретна математика",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/dyskretna-matematyka/",
+   "https://electronics.lnu.edu.ua/course/dyskretna-matematyka-2/",
+   "https://electronics.lnu.edu.ua/course/dyskretna-matematyka-ipz/"
+  ],
+  "note": "три сторінки для різних спеціальностей",
+  "reviewed": true
+ },
+ {
+  "id": "q048",
+  "category": "course",
+  "query": "мова програмування Python",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/mova-prohramuvannia-python-ist-2/",
+   "https://electronics.lnu.edu.ua/course/mova-prohramuvannia-python-kn/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q049",
+  "category": "course",
+  "query": "об'єктно-орієнтоване програмування",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/ob-iektno-oriientovane-prohramuvannia-kn/",
+   "https://electronics.lnu.edu.ua/course/objektno-orijentovane-prohramuvannya/",
+   "https://electronics.lnu.edu.ua/course/ob-iektno-oriientovane-prohramuvannia-ipz/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q050",
+  "category": "course",
+  "query": "web-дизайн",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/course/web-dyzajn/"
+  ],
+  "note": "",
+  "reviewed": true
+ },
+ {
+  "id": "q051",
+  "category": "colloquial",
+  "query": "розклад ізпитів",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/students/rozklad-format-pdf/"
+  ],
+  "note": "помилка в слові «іспитів»",
+  "reviewed": true
+ },
+ {
+  "id": "q052",
+  "category": "colloquial",
+  "query": "вступ на магістратуру",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/your-prospects/",
+   "https://electronics.lnu.edu.ua/academics/master/",
+   "https://electronics.lnu.edu.ua/admission/osvitni-programy/"
+  ],
+  "note": "ПЕРЕВІРИТИ: де саме на сайті є умови вступу в магістратуру | Марта: сторінка загальна, окремої сторінки про вступ у магістратуру не знайдено; відповідь є всередині",
+  "reviewed": true
+ },
+ {
+  "id": "q053",
+  "category": "colloquial",
+  "query": "шо там з вступом 2026",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/admission/vstupna-kampaniia-2021-2022-navchal-noho-roku/",
+   "https://electronics.lnu.edu.ua/admission/your-prospects/"
+  ],
+  "note": "суржик",
+  "reviewed": true
+ },
+ {
+  "id": "q054",
+  "category": "trap",
+  "query": "рецепт борщу",
+  "relevant": [],
+  "note": "на сайті немає",
+  "reviewed": true
+ },
+ {
+  "id": "q055",
+  "category": "trap",
+  "query": "курс долара до гривні",
+  "relevant": [],
+  "note": "на сайті немає",
+  "reviewed": true
+ },
+ {
+  "id": "q056",
+  "category": "trap",
+  "query": "прогноз погоди у Львові на завтра",
+  "relevant": [],
+  "note": "на сайті немає",
+  "reviewed": true
+ },
+ {
+  "id": "q057",
+  "category": "trap",
+  "query": "розклад поїздів Львів Київ",
+  "relevant": [],
+  "note": "на сайті немає",
+  "reviewed": true
+ },
+ {
+  "id": "h001",
+  "category": "abbrev",
+  "query": "силабуси ВПК 2022",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-vysokoproduktyvnyy-komp-iutynh-2022-r/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ },
+ {
+  "id": "h002",
+  "category": "abbrev",
+  "query": "силабуси КН 2022",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-komp-iuterni-nauky-2022-r/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ },
+ {
+  "id": "h003",
+  "category": "abbrev",
+  "query": "обговорення освітньої програми ВПК",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-vysokoproduktyvnyy-komp-iutynh/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ },
+ {
+  "id": "h004",
+  "category": "abbrev",
+  "query": "обговорення освітньої програми КН",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/obhovorennia-osvitnoi-prohramy-komp-iuterni-nauky/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ },
+ {
+  "id": "h005",
+  "category": "abbrev",
+  "query": "силабуси ІПЗ 2019",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/sylabusy-osvitnikh-komponent-osvitno-profesiynoi-prohramy-inzheneriia-prohramnoho-zabezpechennia-2019-r-onovleni-2023-r/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ },
+ {
+  "id": "h006",
+  "category": "abbrev",
+  "query": "робочі навчальні програми ІПЗ",
+  "relevant": [
+   "https://electronics.lnu.edu.ua/robochi-navchalni-prohramy-ok-osvitnoi-prohramy-inzheneriia-prohramnoho-zabezpechennia/"
+  ],
+  "note": "контрольний набір: складено ПІСЛЯ словника абревіатур, не бачив при його створенні; потрібна перевірка Марти",
+  "reviewed": false,
+  "set": "heldout"
+ }
+]

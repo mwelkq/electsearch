@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пошук по сайту — Факультет</title>
+<link rel="icon" href="/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&subset=cyrillic&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1d4ed8; --blue-dark:#1e40af; --blue-soft:#eaf0ff;
+  --bg:#f5f6fa; --card:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7ee;
+  --green:#059669; --green-soft:#e6f6ef;
+  --shadow:0 4px 20px rgba(17,24,39,.07);
+}
+@media (prefers-color-scheme:dark){
+:root{
+  --blue:#4f7df0; --blue-dark:#3b66d9; --blue-soft:#161d30;
+  --bg:#09090b; --card:#131316; --text:#ededf0; --muted:#8e8e98; --line:#24242a;
+  --green:#34d399; --green-soft:#0f2a22; --shadow:0 4px 20px rgba(0,0,0,.6);
+}
+.logo img{filter:brightness(0) invert(1)}
+.box input::placeholder{color:#6b6b75}
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 Inter,"Segoe UI",system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+.app{display:grid;grid-template-columns:388px 1fr;height:100dvh}
+
+/* ===== бокова панель ===== */
+.side{background:var(--card);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:22px;min-height:0}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{flex:none;width:44px;height:48px;display:grid;place-items:center;user-select:none}
+.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.brand b{display:block;font-size:1.1rem;font-weight:700;line-height:1.2}
+.brand span{color:var(--muted);font-size:.9rem}
+.new{margin-top:26px;width:100%;height:54px;border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:600;font-size:1.02rem}
+.new:hover{background:var(--blue-dark)}
+.sec{margin:26px 0 8px;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.recent{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
+.rc{display:flex;align-items:center;gap:6px;border-radius:10px;padding:0 6px 0 14px;min-height:48px}
+.rc:hover{background:var(--bg)}
+.rc.on{background:var(--blue-soft);color:var(--blue)}
+.rc button.t{flex:1;text-align:left;background:none;border:0;padding:12px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1rem}
+.rc .x{opacity:0;border:0;background:none;color:var(--muted);width:28px;height:28px;border-radius:8px;font-size:18px;line-height:1}
+.rc:hover .x{opacity:1}.rc .x:hover{background:var(--line)}
+.empty{color:var(--muted);font-size:.92rem;padding:6px 14px}
+.howbtn{display:flex;align-items:center;gap:10px;margin-top:10px;width:100%;border:0;background:none;border-radius:10px;padding:12px 14px;text-align:left;color:var(--muted);font-weight:500}
+.howbtn:hover{background:var(--bg);color:var(--text)}
+.howing .howbtn{background:var(--blue-soft);color:var(--blue)}
+.howbtn svg{width:18px;height:18px;flex:none}
+.idx{margin-top:8px;background:var(--bg);border-radius:12px;padding:14px 16px;font-size:.88rem;color:var(--muted)}
+.idx b{display:flex;align-items:center;gap:8px;color:var(--text);font-size:.88rem;font-weight:600;margin-bottom:2px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);flex:none}
+.dot.off{background:#d97706}
+
+/* ===== основна область ===== */
+.main{display:flex;flex-direction:column;min-width:0;min-height:0;position:relative}
+.bar{display:none;align-items:center;gap:12px;padding:12px 28px;min-height:72px;background:var(--card);border-bottom:1px solid var(--line)}
+.chatting .bar{display:flex}
+.bar h2{margin:0;flex:1;font-size:1.15rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg-l{color:var(--muted);font-size:.95rem}
+.seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;gap:2px}
+.seg button{border:0;background:none;padding:8px 14px;border-radius:9px;color:var(--muted);font-weight:500;font-size:.95rem}
+.seg button.on{background:var(--card);color:var(--text);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.menu{display:none;flex:none;border:0;background:none;width:40px;height:40px;border-radius:10px;margin-left:-8px}
+.menu svg{width:24px;height:24px}
+.mb{display:none;align-items:center;gap:12px;flex:1;min-width:0}
+.mb .logo{width:36px;height:40px}
+.mb b{display:block;font-size:1.05rem;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mb span{display:block;color:var(--muted);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{display:none;flex:none;border:0;background:var(--blue-soft);color:var(--blue);font-weight:600;font-size:.82rem;padding:5px 13px;border-radius:999px;white-space:nowrap}
+
+/* привітальний екран */
+.welcome{flex:1;display:flex;flex-direction:column;align-items:center;padding:24px;overflow-y:auto}
+.welcome .wrap{margin:auto 0}
+.chatting .welcome{display:none}
+.wrap{width:100%;max-width:1056px}
+.welcome .logo{width:100px;height:114px;margin:0 auto}
+.welcome h1{text-align:center;margin:44px 0 12px;font-size:2.7rem;font-weight:800;letter-spacing:-.02em}
+.welcome .sub{text-align:center;color:var(--muted);font-size:1.2rem;margin:0 0 40px}
+.box{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px 12px 28px;box-shadow:var(--shadow)}
+.box input{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--text);font:inherit;font-size:1.15rem;padding:10px 0}
+.box input::placeholder{color:#9ca3af}
+.box:focus-within{border-color:var(--blue)}
+.go{flex:none;width:58px;height:58px;border-radius:50%;border:0;background:var(--blue);color:#fff;display:grid;place-items:center}
+.go:hover{background:var(--blue-dark)}.go:disabled{opacity:.5;cursor:default}
+.go svg{width:24px;height:24px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.cd{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px 18px}
+.cd:hover{border-color:var(--blue)}
+.cd small{display:block;color:var(--blue);font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.cd span{font-weight:500;font-size:1.05rem}
+.status{text-align:center;color:var(--muted);font-size:.95rem;margin-top:32px;display:flex;gap:8px;justify-content:center;align-items:center}
+
+/* чат */
+.chat{display:none;flex:1;min-height:0;flex-direction:column}
+.chatting .chat{display:flex}
+#log{flex:1;overflow-y:auto;padding:20px 28px 8px}
+.col{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding-bottom:12px}
+.u{align-self:flex-end;max-width:min(78%,640px);background:var(--blue);color:#fff;padding:15px 22px;border-radius:22px;border-top-right-radius:8px;font-size:1.05rem;overflow-wrap:anywhere}
+.b{display:flex;gap:18px;align-items:flex-start}
+.b .logo{width:42px;height:48px}
+.bb{flex:1;min-width:0}
+.txt{font-size:1.05rem;padding-top:6px;overflow-wrap:anywhere;white-space:pre-wrap}
+.err{color:#b91c1c}
+.res{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.r{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 24px}
+.r.rec{border:2px solid var(--blue);padding:17px 23px}
+.rh{display:flex;align-items:center;gap:12px}
+.n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:.85rem;font-weight:700}
+.rec .n{background:var(--blue);color:#fff}
+.rh h3{flex:1;margin:0;font-size:1.1rem;font-weight:700;overflow-wrap:anywhere}
+.badge{flex:none;font-size:.82rem;font-weight:500;padding:4px 12px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+.sc{flex:none;font-size:.82rem;font-weight:500;padding:4px 12px;border-radius:999px;background:var(--bg);color:var(--muted)}
+.url{display:block;margin:8px 0 6px;color:var(--blue);font-size:.95rem;text-decoration:none;overflow-wrap:anywhere}
+.url:hover{text-decoration:underline}
+.snip{margin:0;color:var(--muted);font-size:.95rem;overflow-wrap:anywhere}
+.open{display:inline-block;margin-top:12px;color:var(--blue);font-weight:600;font-size:.98rem;text-decoration:none}
+.open:hover{text-decoration:underline}
+.fb{display:flex;align-items:center;gap:10px;margin-top:22px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
+.fb button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 18px}
+.fb button:hover{border-color:var(--blue)}
+.fb button:disabled{opacity:.6;cursor:default}
+.fb .meta{margin-left:auto;font-size:.88rem}
+.warn{color:#b45309}
+
+/* низ чату */
+.foot{padding:8px 28px 14px}
+.foot .col{gap:12px;padding:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 20px;font-size:.98rem}
+.chip:hover{border-color:var(--blue)}
+.foot .box{padding:10px 12px 10px 24px;border-radius:16px;box-shadow:var(--shadow)}
+.foot .box input{font-size:1.05rem}
+.foot .go{width:52px;height:52px}
+.disc{text-align:center;color:var(--muted);font-size:.88rem}
+
+.dots span{display:inline-block;width:8px;height:8px;margin:12px 3px 0 0;border-radius:50%;background:var(--muted);animation:bl 1s infinite}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+/* ===== як працює пошук ===== */
+.how{display:none;flex:1;overflow-y:auto;background:var(--card);padding:56px 48px}
+.howing .how{display:block}
+.howing .welcome,.howing .chat,.howing .bar{display:none}
+.how-in{max-width:1500px;margin:0 auto}
+.back{border:0;background:none;color:var(--blue);font-weight:600;padding:0;margin-bottom:24px}
+.back:hover{text-decoration:underline}
+.how h1{margin:0 0 10px;font-size:2.4rem;font-weight:800;letter-spacing:-.02em}
+.how .lead{margin:0 0 40px;color:var(--muted);font-size:1.15rem}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:44px}
+.st{--c:var(--blue);position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px 26px;min-height:240px}
+.st:not(:last-child)::after{content:'→';position:absolute;right:-34px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:22px}
+.st small{display:flex;align-items:center;gap:8px;color:var(--c);font-size:.82rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.st small::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--c)}
+.st h3{margin:10px 0 10px;font-size:1.3rem;font-weight:700}
+.st p{margin:0;color:var(--muted);font-size:.98rem}
+.alg{background:var(--blue-soft);border-radius:10px;padding:8px 12px;margin-top:8px}
+.alg b{display:block;color:var(--blue);font-weight:600}
+.alg span{color:var(--muted);font-size:.86rem}
+.c1{--c:#0ea5e9}.c2{--c:var(--blue)}.c3{--c:#7c3aed}.c4{--c:#d97706}.c5{--c:var(--green)}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;align-items:start}
+.note{background:var(--bg);border-radius:18px;padding:24px 28px}
+.note h4{margin:0 0 10px;font-size:1.12rem;font-weight:700}
+.note p{margin:0;color:var(--muted);font-size:.98rem}
+@media (max-width:1500px){
+  .flow{grid-template-columns:repeat(3,1fr);gap:20px}
+  .st::after{display:none}
+  .st{min-height:0}
+}
+@media (max-width:1100px){.notes{grid-template-columns:1fr;gap:14px}}
+
+/* ===== мобільна версія ===== */
+.scrim{display:none}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr}
+  .side{position:fixed;inset:0 auto 0 0;width:min(86vw,340px);z-index:20;transform:translateX(-102%);transition:transform .2s;box-shadow:var(--shadow)}
+  .nav-open .side{transform:none}
+  .nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:10}
+  .menu{display:grid;place-items:center}
+  .bar,.howing .bar{display:flex;padding:12px 16px;min-height:72px;gap:10px}
+  .bar h2,.seg-l,.seg{display:none}
+  .mb{display:flex}
+  .pill{display:block}
+  .welcome{padding:16px}
+  .how{padding:24px 16px 32px}
+  .back{display:none}
+  .how h1{font-size:1.7rem}
+  .how .lead{font-size:1rem;margin-bottom:24px}
+  .flow{grid-template-columns:1fr;gap:12px}
+  .st{padding:18px 18px 20px}
+  .notes{margin-top:24px}
+  .note{padding:18px 20px}
+  .welcome .logo{width:70px;height:80px}
+  .welcome h1{font-size:1.9rem;margin-top:20px}
+  .welcome .sub{font-size:1rem;margin-bottom:26px}
+  .cards{grid-template-columns:1fr;gap:12px;margin-top:24px}
+  .box{padding:8px 10px 8px 18px;border-radius:16px}
+  .go{width:46px;height:46px}.go svg{width:20px;height:20px}
+  #log{padding:16px 16px 4px}
+  .col{gap:16px}
+  .u{max-width:88%;padding:10px 16px;border-radius:18px;font-size:1rem}
+  .b{display:block}.b .logo{display:none}
+  .txt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:1rem}
+  .res{gap:10px;margin-top:10px}
+  .r{padding:12px 14px;border-radius:14px}.r.rec{padding:11px 13px}
+  .rh{gap:10px}
+  .n{width:24px;height:24px;font-size:.8rem}
+  .rh h3{font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .url{margin:4px 0 2px;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .snip{font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .badge,.open{display:none}
+  .fb{margin-top:12px;font-size:.92rem}
+  .fb .meta{display:none}
+  .foot{padding:10px 12px 14px;background:var(--card);border-top:1px solid var(--line)}
+  .foot .col{gap:10px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .chip{white-space:nowrap;flex:none;background:var(--bg);border-color:transparent;padding:7px 16px;font-size:.92rem}
+  .foot .box{background:var(--bg);border-color:transparent;box-shadow:none;border-radius:24px;padding:5px 5px 5px 18px}
+  .foot .box input{font-size:1rem}
+  .foot .go{width:40px;height:40px}.foot .go svg{width:20px;height:20px}
+  .disc{display:none}
+}
+.hide-welcome-bar .bar{display:none}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" id="side">
+    <div class="brand"><div class="logo"><img src="/logo-t.png" alt="Емблема факультету"></div><div><b>Пошук по сайту</b><span>Факультет · бета</span></div></div>
+    <button class="new" id="new">+&nbsp; Нова розмова</button>
+    <div class="sec">Нещодавні</div>
+    <div class="recent" id="recent"></div>
+    <button class="howbtn" id="howBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>Як працює пошук</button>
+    <div class="idx" id="idx"><b><i class="dot off"></i><span id="idxT">Індекс завантажується…</span></b><span id="idxS">&nbsp;</span></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <section class="main" id="main">
+    <div class="bar" id="bar">
+      <button class="menu" id="menu" aria-label="Меню"></button>
+      <div class="mb"><div class="logo"><img src="/logo-t.png" alt=""></div><div style="min-width:0"><b>Пошук по сайту</b><span id="mbSub">Факультет</span></div></div>
+      <h2 id="title">Нова розмова</h2>
+      <span class="seg-l">Алгоритм пошуку</span>
+      <div class="seg" id="seg">
+        <button data-m="bm25">BM25</button><button data-m="embed">Embeddings</button><button data-m="hybrid" class="on">Гібрид</button>
+      </div>
+      <button class="pill" id="pill" title="Змінити алгоритм пошуку">Гібрид</button>
+    </div>
+
+    <div class="how" id="how"><div class="how-in">
+      <button class="back" id="back">← До пошуку</button>
+      <h1>Як працює пошук</h1>
+      <p class="lead">Від сканування сайту до рекомендації сторінки в чаті. Етапи 1–2 — основна робота, етапи 3–4 — оформлення.</p>
+      <div class="flow">
+        <div class="st c1"><small>Етап 1</small><h3>Crawler</h3><p>Python-скрипт обходить сайт за посиланнями. Ліміт: 10 → 100+ сторінок</p></div>
+        <div class="st c1"><small>Етап 1</small><h3>База сторінок</h3><p>URL, заголовок і чистий текст кожної сторінки, збережені локально</p></div>
+        <div class="st c2"><small>Етап 2</small><h3>Індекс</h3>
+          <div class="alg"><b>BM25</b><span>лексичний: збіг слів</span></div>
+          <div class="alg"><b>Embeddings</b><span>семантичний: збіг змісту</span></div></div>
+        <div class="st c3"><small>Етап 2</small><h3>RAG + LLM</h3><p>Бере top-k сторінок з індексу, LLM формує відповідь і вибирає посилання</p></div>
+        <div class="st c4"><small>Етап 3</small><h3>API</h3><p>Бекенд на сервері, напр. FastAPI: POST /ask → відповідь + посилання</p></div>
+        <div class="st c5"><small>Етап 4</small><h3>Чат-інтерфейс</h3><p>Вікно на сайті факультету, де користувач пише питання</p></div>
+      </div>
+      <div class="notes">
+        <div class="note"><h4>Експеримент: BM25 vs Embeddings</h4><p>Однаковий набір тестових питань → порівняти, чи потрапляє правильна сторінка в top-3 (Precision@3, MRR). Зробити висновки, де який алгоритм кращий.</p></div>
+        <div class="note"><h4>Приклад відмінності</h4><p>«Коли сесія?» — BM25 шукає слово «сесія»; Embeddings знайде й сторінку «Графік екзаменів», навіть без цього слова.</p></div>
+        <div class="note"><h4>Вибір LLM</h4><p>Локально (напр. через Ollama) — безкоштовно й приватно; або через API — якісніше, але платно. Порівняти й обрати.</p></div>
+      </div>
+    </div></div>
+
+    <div class="welcome" id="welcome">
+      <div class="wrap">
+        <div class="logo"><img src="/logo-t.png" alt="Емблема факультету"></div>
+        <h1>Чим можу допомогти?</h1>
+        <p class="sub">Поставте питання звичайною мовою — я знайду потрібну сторінку на сайті факультету.</p>
+        <form class="box" id="form0"><input id="q0" maxlength="300" placeholder="Наприклад: коли починається зимова сесія?" autocomplete="off" required>
+          <button class="go" aria-label="Надіслати"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></form>
+        <div class="cards" id="cards"></div>
+        <div class="status"><i class="dot off" id="dot0"></i><span id="status0">Індекс завантажується…</span></div>
+      </div>
+    </div>
+
+    <div class="chat" id="chat">
+      <div id="log"><div class="col" id="col"></div></div>
+      <div class="foot"><div class="col">
+        <div class="chips" id="chips"></div>
+        <form class="box" id="form1"><input id="q1" maxlength="300" placeholder="Запитайте що завгодно про сайт факультету…" autocomplete="off" required>
+          <button class="go" aria-label="Надіслати"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></form>
+        <div class="disc">Відповіді формуються на основі вмісту сайту. Перевіряйте важливу інформацію на сторінці-джерелі.</div>
+      </div></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const KEY = 'fei_chat_v2';
+const CARDS = [['Навчання','Коли починається зимова сесія?'],['Вступ','Які документи потрібні для вступу в магістратуру?'],
+               ['Контакти','Як зв\'язатися з деканатом?'],['Студентам','Де знайти правила призначення стипендії?']];
+const CHIPS = ['Графік зимової сесії','Контакти деканату','Вступ до магістратури'];
+let st = {convs: [], active: null, method: 'hybrid'};
+let busy = false, info = null, howing = false;
+const METHODS = {bm25: 'BM25', embed: 'Embeddings', hybrid: 'Гібрид'};
+const ICON_MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+const ICON_BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+
+function load(){ try{ const d = JSON.parse(localStorage.getItem(KEY)); if(d && Array.isArray(d.convs)) st = Object.assign(st, d); }catch(e){} }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify({convs: st.convs.slice(0, 30), active: st.active, method: st.method})); }catch(e){} }
+function el(tag, cls, text){ const e = document.createElement(tag); if(cls) e.className = cls; if(text !== undefined) e.textContent = text; return e; }
+const active = () => st.convs.find(c => c.id === st.active);
+
+/* ---- розмови ---- */
+function newConv(){
+  const cur = active();
+  howing = false;
+  if(cur && !cur.msgs.length){ closeNav(); render(); return; }   // порожню не плодимо
+  const c = {id: String(Date.now()), title: 'Нова розмова', msgs: []};
+  st.convs.unshift(c); st.active = c.id; save(); closeNav(); render();
+  $('q0').focus();
+}
+function openConv(id){ st.active = id; howing = false; save(); closeNav(); render(); }
+function delConv(id){
+  st.convs = st.convs.filter(c => c.id !== id);
+  if(st.active === id) st.active = st.convs.length ? st.convs[0].id : null;
+  save(); render();
+}
+
+/* ---- відображення ---- */
+function render(){
+  if(!active()){ const c = {id: String(Date.now()), title: 'Нова розмова', msgs: []}; st.convs.unshift(c); st.active = c.id; }
+  const c = active();
+  $('app').classList.toggle('chatting', c.msgs.length > 0);
+  $('app').classList.toggle('howing', howing);
+  $('title').textContent = c.title;
+  document.querySelectorAll('#seg button').forEach(b => b.classList.toggle('on', b.dataset.m === st.method));
+  $('pill').textContent = METHODS[st.method] || st.method;
+  const back = howing || c.msgs.length > 0;
+  $('menu').innerHTML = back ? ICON_BACK : ICON_MENU;
+  $('menu').setAttribute('aria-label', back ? 'Назад' : 'Меню');
+  $('mbSub').textContent = info ? `Факультет · ${info.pages} сторінок` : 'Факультет';
+  // бокова панель
+  const rc = $('recent'); rc.textContent = '';
+  const list = st.convs.filter(x => x.msgs.length);
+  if(!list.length) rc.appendChild(el('div', 'empty', 'Поки що порожньо'));
+  list.slice(0, 12).forEach(x => {
+    const row = el('div', 'rc' + (x.id === st.active ? ' on' : ''));
+    const t = el('button', 't', x.title); t.onclick = () => openConv(x.id);
+    const d = el('button', 'x', '×'); d.title = 'Видалити'; d.setAttribute('aria-label', 'Видалити розмову'); d.onclick = () => delConv(x.id);
+    row.append(t, d); rc.appendChild(row);
+  });
+  // повідомлення
+  const col = $('col'); col.textContent = '';
+  c.msgs.forEach((m, i) => col.appendChild(msgNode(m, c, i)));
+  scrollDown();
+}
+function scrollDown(){ const l = $('log'); l.scrollTop = l.scrollHeight; }
+
+function pageCard(p, i, isRec, showScore){
+  const card = el('div', 'r' + (isRec ? ' rec' : ''));
+  const h = el('div', 'rh'); h.appendChild(el('span', 'n', String(i + 1))); h.appendChild(el('h3', '', p.title || p.url));
+  if(isRec) h.appendChild(el('span', 'badge', 'Рекомендовано'));
+  if(showScore && p.score !== undefined) h.appendChild(el('span', 'sc', Number(p.score).toFixed(2)));
+  card.appendChild(h);
+  const u = el('a', 'url', p.url.replace(/^https?:\/\/(www\.)?/, '')); u.href = p.url; u.target = '_blank'; u.rel = 'noopener'; card.appendChild(u);
+  if(p.snippet) card.appendChild(el('p', 'snip', '…' + p.snippet + '…'));
+  const o = el('a', 'open', 'Відкрити сторінку ↗'); o.href = p.url; o.target = '_blank'; o.rel = 'noopener'; card.appendChild(o);
+  return card;
+}
+
+function msgNode(m, conv, idx){
+  if(m.role === 'user') return el('div', 'u', m.text);
+  const row = el('div', 'b'); const lg = el('div', 'logo'); const im = el('img'); im.src = '/logo-t.png'; im.alt = ''; lg.appendChild(im); row.appendChild(lg);
+  const bb = el('div', 'bb'); row.appendChild(bb);
+  if(m.pending){ const d = el('div', 'dots'); d.innerHTML = '<span></span><span></span><span></span>'; bb.appendChild(d); return row; }
+  const d = m.data;
+  if(!d){ bb.appendChild(el('div', 'txt err', m.text)); return row; }
+  bb.appendChild(el('div', 'txt', d.answer || 'Відповіді немає.'));
+  // картки: рекомендована першою, далі інші знайдені (всього до 3)
+  const byUrl = new Map((d.results || []).map(p => [p.url, p]));
+  const cards = [];
+  if(d.recommended){ const p = byUrl.get(d.recommended.url) || d.recommended; cards.push([p, true]); }
+  (d.results || []).forEach(p => { if(cards.length < 3 && !(d.recommended && p.url === d.recommended.url)) cards.push([p, false]); });
+  if(cards.length && (d.recommended || d.degraded)){
+    const box = el('div', 'res');
+    cards.forEach(([p, rec], i) => box.appendChild(pageCard(p, i, rec, m.method === 'embed')));
+    bb.appendChild(box);
+  }
+  const fb = el('div', 'fb');
+  if(d.degraded) fb.appendChild(el('span', 'warn', 'Мовна модель недоступна — показано результати пошуку.'));
+  else if(d.found !== false){
+    fb.appendChild(el('span', '', 'Корисно?'));
+    ['Так', 'Ні'].forEach((t, k) => {
+      const b = el('button', '', t);
+      if(m.vote !== undefined){ b.disabled = true; if(m.vote === (k === 0)) b.style.borderColor = 'var(--blue)'; }
+      b.onclick = () => vote(conv, idx, k === 0);
+      fb.appendChild(b);
+    });
+  }
+  const n = info ? ` з ${info.pages} сторінок` : '';
+  fb.appendChild(el('span', 'meta', (d.degraded || !d.results ? '' : `Знайдено ${d.results.length}${n} · `) + d.latency + ' с'));
+  bb.appendChild(fb);
+  return row;
+}
+
+async function vote(conv, idx, useful){
+  const m = conv.msgs[idx]; if(m.vote !== undefined) return;
+  m.vote = useful; save(); render();
+  const q = conv.msgs[idx - 1];
+  try{ await fetch('/feedback', {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({question: q ? q.text : '', method: m.method || st.method, recommended: m.data && m.data.recommended ? m.data.recommended.url : null, useful})}); }catch(e){}
+}
+
+/* ---- запит ---- */
+async function ask(text){
+  text = text.trim(); if(text.length < 2 || busy) return;
+  busy = true; setBusy(true);
+  const c = active();
+  if(!c.msgs.length) c.title = text.length > 40 ? text.slice(0, 40).trim() + '…' : text;
+  c.msgs.push({role: 'user', text});
+  const botMsg = {role: 'bot', pending: true, method: st.method}; c.msgs.push(botMsg);
+  render();
+  try{
+    const r = await fetch('/ask', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({question: text, method: st.method})});
+    if(!r.ok){ const e = await r.json().catch(() => ({})); throw new Error(typeof e.detail === 'string' ? e.detail : ('Помилка ' + r.status)); }
+    botMsg.data = await r.json(); delete botMsg.pending;
+  }catch(err){
+    delete botMsg.pending; botMsg.text = 'Не вдалося отримати відповідь: ' + err.message;
+  }
+  busy = false; setBusy(false); save(); render(); $('q1').focus();
+}
+function setBusy(b){ document.querySelectorAll('.go').forEach(x => x.disabled = b); }
+
+/* ---- мобільне меню ---- */
+function closeNav(){ $('app').classList.remove('nav-open'); }
+
+/* ---- індекс ---- */
+async function loadInfo(){
+  try{
+    const h = await (await fetch('/health')).json();
+    if(h.pages){ info = h;
+      $('idxT').textContent = 'Індекс актуальний'; $('idxS').textContent = `${h.pages} сторінок · оновлено ${h.updated}`;
+      $('status0').textContent = `Проіндексовано ${h.pages} сторінок сайту · останнє сканування ${h.updated}`;
+      document.querySelectorAll('.dot').forEach(d => d.classList.remove('off')); render(); }
+  }catch(e){ $('idxT').textContent = 'Немає зв\'язку з сервером'; $('idxS').textContent = 'Запустіть uvicorn api:app'; }
+}
+
+/* ---- ініціалізація ---- */
+CARDS.forEach(([cat, q]) => { const b = el('button', 'cd'); b.type = 'button'; b.appendChild(el('small', '', cat)); b.appendChild(el('span', '', q)); b.onclick = () => ask(q); $('cards').appendChild(b); });
+CHIPS.forEach(t => { const b = el('button', 'chip', t); b.type = 'button'; b.onclick = () => ask(t); $('chips').appendChild(b); });
+[['form0','q0'],['form1','q1']].forEach(([f, i]) => $(f).addEventListener('submit', e => { e.preventDefault(); const v = $(i).value; $(i).value = ''; ask(v); }));
+$('new').onclick = newConv;
+$('menu').onclick = () => {
+  if(howing){ howing = false; render(); }
+  else if(active() && active().msgs.length) newConv();
+  else $('app').classList.add('nav-open');
+};
+$('howBtn').onclick = () => { howing = !howing; closeNav(); render(); };
+$('back').onclick = () => { howing = false; render(); };
+$('pill').onclick = () => { const k = Object.keys(METHODS); st.method = k[(k.indexOf(st.method) + 1) % k.length]; save(); render(); };
+$('scrim').onclick = closeNav;
+$('seg').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; st.method = b.dataset.m; save(); render(); });
+load();
+// прибираємо порожні розмови, крім першої, що залишиться активною
+st.convs = st.convs.filter(c => c.msgs.length || c.id === st.active);
+st.convs.forEach(c => c.msgs.forEach(m => { delete m.pending; }));
+render(); loadInfo();
+</script>
+</body>
+</html>

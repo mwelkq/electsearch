@@ -1,0 +1,22 @@
+# секрети
+.env
+
+# середовище і кеш
+.venv/
+__pycache__/
+.vscode/
+
+# вектори embeddings: великі, перераховуються з chunks (python search.py)
+data/*.npy
+data/emb_parts_*/
+
+# відгуки користувачів з інтерфейсу (персональні дані)
+data/feedback.jsonl
+
+# локальні копії і дублікати
+_backup/
+/chunks.jsonl
+
+# скриншоти процесу роботи (для тексту курсової), але не ресурси сайту
+*.png
+!web/*.png

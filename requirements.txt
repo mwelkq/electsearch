@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+lxml
+pymorphy3
+pymorphy3-dicts-uk
+rank-bm25
+sentence-transformers
+numpy
+fastapi
+uvicorn
