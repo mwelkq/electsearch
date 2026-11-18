@@ -104,6 +104,7 @@ def main():
     ap.add_argument("--methods", nargs="+", default=["bm25", "embed", "hybrid"])
     ap.add_argument("--model", default="intfloat/multilingual-e5-small")
     ap.add_argument("--max-len", type=int, default=256)
+    ap.add_argument("--title-weight", type=float, default=1.0, help="вага заголовка в BM25 (0 = як до 18.11)")
     ap.add_argument("--set", default="main", choices=["main", "heldout", "all"], help="який набір запитів оцінювати")
     ap.add_argument("--expand", action="store_true", help="розширювати абревіатури в запитах")
     ap.add_argument("--include-unreviewed", action="store_true", help="разом із непереглянутими запитами (для контрольного набору)")
@@ -125,14 +126,14 @@ def main():
         from search_bm25 import BM25Search
 
         class _S:  # мінімальний інтерфейс без завантаження моделі
-            def __init__(self): self.b = BM25Search(args.chunks)
+            def __init__(self): self.b = BM25Search(args.chunks, title_weight=args.title_weight)
             def search(self, q, m, k, expand=False):
                 from query_expansion import expand_query
                 return self.b.search(expand_query(q) if expand else q, k)
         searcher = _S()
     else:
         from search import Searcher
-        searcher = Searcher(args.chunks, args.model, args.max_len)
+        searcher = Searcher(args.chunks, args.model, args.max_len, args.title_weight)
 
     all_rows, summary = {}, {}
     for m in args.methods:
@@ -183,7 +184,7 @@ def main():
             print(f"  {star} {metric:<6} {name:<18} {d:+.3f}  [{lo:+.3f} ; {hi:+.3f}]")
 
     out = args.out or str(ROOT / "eval" / f"results_{args.tag}.json")
-    json.dump({"config": {"model": args.model, "max_len": args.max_len}, "summary": summary, "bootstrap": boot, "rows": all_rows},
+    json.dump({"config": {"model": args.model, "max_len": args.max_len, "chunks": args.chunks, "title_weight": args.title_weight, "expand": args.expand}, "summary": summary, "bootstrap": boot, "rows": all_rows},
               open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"\nДеталі збережено: {out}")
 

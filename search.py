@@ -100,8 +100,9 @@ def rrf(result_lists, top_pages=5, k=RRF_K):
 class Searcher:
     """Єдиний інтерфейс: method in {'bm25', 'embed', 'hybrid'}."""
 
-    def __init__(self, chunks_path="data/chunks_v2.jsonl", model="intfloat/multilingual-e5-small", max_len=256):
-        self.bm25 = BM25Search(chunks_path)
+    def __init__(self, chunks_path="data/chunks_v2.jsonl", model="intfloat/multilingual-e5-small", max_len=256,
+                 title_weight=1.0):
+        self.bm25 = BM25Search(chunks_path, title_weight=title_weight)
         stem = Path(chunks_path).stem
         self.embed = EmbedSearch(self.bm25.chunks, model, max_len=max_len,
                                  index_tag="" if stem == "chunks" else stem)
@@ -132,10 +133,11 @@ def main():
     ap.add_argument("--model", default="intfloat/multilingual-e5-small")
     ap.add_argument("--max-len", type=int, default=256, help="макс. токенів на фрагмент")
     ap.add_argument("-k", type=int, default=3)
+    ap.add_argument("--title-weight", type=float, default=1.0, help="вага заголовка в BM25 (0 = вимкнено)")
     args = ap.parse_args()
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
-    s = Searcher(args.chunks, args.model, args.max_len)
+    s = Searcher(args.chunks, args.model, args.max_len, args.title_weight)
     if args.query:
         show_all(s, " ".join(args.query), args.k)
         return

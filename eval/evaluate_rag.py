@@ -87,6 +87,7 @@ def main():
     ap.add_argument("--model", default=None, help="модель Gemini (за замовчуванням з rag.py)")
     ap.add_argument("--embed-model", default="intfloat/multilingual-e5-small")
     ap.add_argument("--max-len", type=int, default=256)
+    ap.add_argument("--title-weight", type=float, default=1.0, help="вага заголовка в BM25 (0 = як до 18.11)")
     ap.add_argument("-k", type=int, default=5)
     ap.add_argument("--no-expand", action="store_true")
     ap.add_argument("--fallback", action="store_true", help="дозволити запасні моделі (за замовчуванням вимкнено)")
@@ -116,7 +117,7 @@ def main():
         queries = queries[:args.limit]
 
     canon = load_alias_map(args.chunks)
-    searcher = Searcher(args.chunks, args.embed_model, args.max_len)
+    searcher = Searcher(args.chunks, args.embed_model, args.max_len, args.title_weight)
     out_path = ROOT / "eval" / f"rag_{args.tag}.jsonl"
     done = {}
     if out_path.exists():
